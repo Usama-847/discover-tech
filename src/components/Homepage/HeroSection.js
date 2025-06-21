@@ -12,6 +12,7 @@ export default function HeroSection({ onStartJourney }) {
       <div className="absolute inset-0 pointer-events-auto">
         <Spline
           scene="https://prod.spline.design/nhnZ428NKP3ZGr32/scene.splinecode"
+          // scene="https://prod.spline.design/5opHLfyPLyobL4Bm/scene.splinecode"
           className="w-full h-full"
         />
       </div>

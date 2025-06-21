@@ -22,7 +22,7 @@ export default function Homepage() {
 
       <main className="mx-auto min-h-screen">
         {/* Hero Section with Spline */}
-        <HeroSection onStartJourney={handleStartJourney} />
+        {/* <HeroSection onStartJourney={handleStartJourney} /> */}
 
         {/* Partners Logo Section - Full Width */}
         <PartnersSection />

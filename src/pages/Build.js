@@ -12,7 +12,10 @@ const HeroSection = () => {
         playsInline
         preload="auto"
       >
-        <source src="/video/bg-video.mp4" type="video/mp4" />
+        <source
+          src="https://res.cloudinary.com/db9mlt7iq/video/upload/v1750488171/ratih6wegieqjt1mezp8.mp4"
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
 
