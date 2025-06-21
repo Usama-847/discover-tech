@@ -11,7 +11,7 @@ export default function HeroSection({ onStartJourney }) {
       {/* Full width Spline background */}
       <div className="absolute inset-0 pointer-events-auto">
         <Spline
-          scene="https://prod.spline.design/zH6Lj8keEtgXhNPI/scene.splinecode"
+          scene="https://prod.spline.design/nhnZ428NKP3ZGr32/scene.splinecode"
           className="w-full h-full"
         />
       </div>
@@ -19,17 +19,20 @@ export default function HeroSection({ onStartJourney }) {
       {/* Left side text content overlaid on background */}
       <div className="relative z-10 flex items-end justify-start h-full px-4 pb-16 pointer-events-none">
         <div className="w-full lg:w-2/5 text-left pointer-events-auto">
-          <h2
-            className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+          <h2 className="text-3xl md:text-5xl font-medium text-gray-100 my-1.5">
+            We’re the{" "}
+          </h2>
+          <span
+            className="text-4xl md:text-6xl font-extrabold text-gray-100"
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
           >
-            Learn <span className="text-gray-900">Data Science & AI</span> with
-            Global Experts
-          </h2>
+            {" "}
+            Building Blocks
+          </span>
           <p
-            className="text-xl text-gray-700 mb-8"
+            className="text-xl text-gray-200 mb-8 mt-2"
             style={{
               fontFamily: "Inter, system-ui, -apple-system, sans-serif",
             }}
