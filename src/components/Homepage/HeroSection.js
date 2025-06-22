@@ -43,7 +43,7 @@ export default function HeroSection({ onStartJourney }) {
           </p>
           <button
             onClick={onStartJourney}
-            className="bg-gray-800 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-900 transition-colors mb-8 shadow-lg"
+            className="bg-gray-800 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-600 transition-colors mb-8 shadow-lg hover:cursor-pointer"
           >
             Start Your Journey
           </button>

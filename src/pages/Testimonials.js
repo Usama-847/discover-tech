@@ -133,17 +133,17 @@ const TestimonialsSection = () => {
             >
               <motion.button
                 onClick={() => paginate(-1)}
-                className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
+                className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 hover:cursor-pointer"
                 aria-label="Previous testimonial"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <ChevronLeft size={20} className="text-gray-600" />
+                <ChevronLeft size={20} className="text-gray-600 " />
               </motion.button>
               <motion.button
                 onClick={() => paginate(1)}
-                className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
+                className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 hover:cursor-pointer"
                 aria-label="Next testimonial"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}

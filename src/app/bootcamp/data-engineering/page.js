@@ -3,7 +3,7 @@ import React from "react";
 import BootcampComponent from "../../../components/BootcampComponent";
 import { Users } from "lucide-react";
 
-const DataEngineeringBootcamp = () => {
+const DataEngineering = () => {
   const data = {
     title: "Data Engineering Bootcamp",
     description:
@@ -37,7 +37,7 @@ const DataEngineeringBootcamp = () => {
       { title: "Data Pipelines Automation & Scheduling" },
       { title: "Capstone Projects & Career Mentorship" },
     ],
-    tools: [], // Empty array as specified in the original component
+    tools: [],
     heroMessage:
       "Start your journey to a global career in Data Engineering! Gain hands-on skills and become an industry-ready professional",
     certificationTitle: "DATA ENGINEER",
@@ -46,4 +46,4 @@ const DataEngineeringBootcamp = () => {
   return <BootcampComponent {...data} />;
 };
 
-export default DataEngineeringBootcamp;
+export default DataEngineering;

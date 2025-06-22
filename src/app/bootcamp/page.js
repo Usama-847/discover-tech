@@ -1,9 +1,27 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Clock, Calendar, Users, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import HeroSection from "@/components/Homepage/HeroSection";
+
 const CourseCardsGrid = () => {
+  const router = useRouter();
+  const coursesRef = useRef(null);
+
+  const coursePathMapping = {
+    "DATA ENGINEER": "/bootcamp/data-engineering",
+    "MERN STACK DEVELOPMENT": "/bootcamp/mern-stack",
+    "MOBILE APP DEVELOPER (REACT NATIVE)": "/bootcamp/mobile-development",
+    "DATA ANALYTICS": "/bootcamp/data-analytics",
+    "BUSINESS ANALYTICS": "/bootcamp/business-analytics",
+    "WEB DESIGN & DEVELOPMENT": "/bootcamp/web-design-development",
+    "BUSINESS DEVELOPMENT": "/bootcamp/business-development",
+    "DIGITAL MARKETING": "/bootcamp/digital-marketing",
+    "CYBER SECURITY EXPERT": "/bootcamp/cyber-security",
+    "AIRLINE RESERVATION": "/bootcamp/airline-reservation",
+  };
+
   const courses = [
     {
       id: 1,
@@ -123,19 +141,6 @@ const CourseCardsGrid = () => {
       gradient: "from-blue-500 to-green-500",
     },
     {
-      id: 10,
-      title: "GRAPHIC DESIGNER",
-      instructor: "JAMEEL KHAN",
-      instructorImage: "/api/placeholder/120/120",
-      duration: "Duration: 3 Months",
-      days: "Days: Mon,Fri",
-      mode: "Mode: Online & Interactive",
-      starting: "Starting: 16-June-2025",
-      price: "PKR 25,000",
-      category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
-    },
-    {
       id: 11,
       title: "AIRLINE RESERVATION",
       instructor: "M S KHAN YOUSAFZAI",
@@ -179,13 +184,23 @@ const CourseCardsGrid = () => {
   };
 
   const handleStartJourney = () => {
-    router.push("/bootcamp");
+    if (coursesRef.current) {
+      coursesRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleEnrollClick = (courseTitle) => {
+    const path = coursePathMapping[courseTitle] || "/bootcamp";
+    router.push(path);
   };
 
   return (
     <div>
       <HeroSection onStartJourney={handleStartJourney} />
-      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 relative bottom-32">
+      <div
+        ref={coursesRef}
+        className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 relative bottom-32"
+      >
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div
@@ -326,9 +341,10 @@ const CourseCardsGrid = () => {
                       {course.price}
                     </div>
                     <motion.button
-                      className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200"
+                      className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 cursor-pointer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() => handleEnrollClick(course.title)}
                     >
                       Enroll Now
                     </motion.button>
@@ -352,16 +368,6 @@ const CourseCardsGrid = () => {
               Join thousands of students who have transformed their careers with
               our expert-led courses
             </p>
-            <motion.button
-              className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-green-600 hover:to-blue-600 transition-all duration-200"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View All Courses
-            </motion.button>
           </motion.div>
         </div>
       </div>

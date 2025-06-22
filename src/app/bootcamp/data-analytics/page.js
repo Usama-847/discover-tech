@@ -3,7 +3,7 @@ import React from "react";
 import BootcampComponent from "../../../components/BootcampComponent";
 import { Users } from "lucide-react";
 
-const WebDevelopment = () => {
+const DataAnalytics = () => {
   const data = {
     title: "Data Engineering Bootcamp",
     description:
@@ -46,4 +46,4 @@ const WebDevelopment = () => {
   return <BootcampComponent {...data} />;
 };
 
-export default WebDevelopment;
+export default DataAnalytics;

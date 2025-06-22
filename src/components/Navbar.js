@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <motion.nav
       style={{ backgroundColor }}
-      className="sticky top-0 z-50 backdrop-blur-md border-b border-white/20 shadow-lg"
+      className="sticky top-0 z-50 bg-white/10 backdrop-blur-sm border-b border-white/20 shadow-md"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -80,9 +80,9 @@ const Navbar = () => {
         >
           <Link href="/">
             <Image
-              src="/images/logo/logo.png"
-              width={150}
-              height={150}
+              src="/images/logo/logo1.jpg"
+              width={80}
+              height={80}
               alt="logo"
               className="rounded-2xl hover:scale-105 transition-transform duration-300"
             />
@@ -119,7 +119,7 @@ const Navbar = () => {
             onMouseLeave={() => setIsBootcampOpen(false)}
           >
             <div
-              className={`px-4 py-2 rounded-md text-sm font-medium transition duration-300 cursor-pointer flex items-center ${
+              className={`px-4 py-2 rounded-md text-sm font-medium transition duration-75 cursor-pointer flex items-center ${
                 isBootcampOpen
                   ? "text-white bg-black"
                   : "text-black hover:text-white hover:bg-black"
