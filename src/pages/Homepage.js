@@ -5,6 +5,7 @@ import HeroSection from "../components/Homepage/HeroSection";
 import PartnersSection from "../components/Homepage/PartnersSection";
 import EmpoweringLeaders from "../components/Homepage/EmpoweringLeaders";
 import FlagshipTrainings from "../components/Homepage/FlagshipTrainings";
+import Hero from "../components/Homepage/Hero";
 
 export default function Homepage() {
   const router = useRouter();
@@ -23,15 +24,15 @@ export default function Homepage() {
       <main className="mx-auto min-h-screen">
         {/* Hero Section with Spline */}
         {/* <HeroSection onStartJourney={handleStartJourney} /> */}
-
+        <Hero />
         {/* Partners Logo Section - Full Width */}
-        <PartnersSection />
+        {/* <PartnersSection /> */}
 
         {/* Empowering Leaders Section */}
-        <EmpoweringLeaders />
+        {/* <EmpoweringLeaders /> */}
 
         {/* Browse Our Flagship Trainings Section */}
-        <FlagshipTrainings onStartJourney={handleStartJourney} />
+        {/* <FlagshipTrainings onStartJourney={handleStartJourney} /> */}
       </main>
     </div>
   );

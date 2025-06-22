@@ -86,16 +86,16 @@ export default function Service() {
           <p className="text-gray-500 text-sm uppercase tracking-wide mb-4">
             WHAT WE DO
           </p>
-          <h1 className="text-5xl md:text-6xl font-light text-black mb-2">
+          <h1 className="text-5xl md:text-6xl font-semibold text-black mb-2">
             Our Services &amp;
           </h1>
-          <h1 className="text-5xl md:text-6xl font-light text-black">
+          <h1 className="text-5xl md:text-6xl font-semibold text-black">
             Expertise
           </h1>
         </div>
 
         {/* Services Grid */}
-        <div className="flex flex-col lg:flex-row gap-6 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-6 items-stretch ">
           {visibleSections.map((sec) => {
             const isExpanded = expandedSection === sec.id;
             return (
@@ -103,7 +103,7 @@ export default function Service() {
                 key={sec.id}
                 className={`
                   flex flex-col h-full
-                  bg-gray-50 rounded-2xl p-8
+                  bg-gray-50 hover:bg-gray-100 rounded-2xl p-8
                   transition-all duration-300 ease-in-out
                   ${
                     isExpanded

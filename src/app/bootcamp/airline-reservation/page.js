@@ -3,7 +3,7 @@ import React from "react";
 import BootcampComponent from "../../../components/BootcampComponent";
 import { Plane, Code } from "lucide-react";
 
-const AirlineReservationBootcamp = () => {
+const AirlineReservation = () => {
   const data = {
     title: "Airline Reservation Bootcamp",
     description:
@@ -67,4 +67,4 @@ const AirlineReservationBootcamp = () => {
   return <BootcampComponent {...data} />;
 };
 
-export default AirlineReservationBootcamp;
+export default AirlineReservation;
