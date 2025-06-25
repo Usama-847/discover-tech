@@ -172,13 +172,35 @@ const BootcampComponent = ({
                 {expandedModule === index && (
                   <div className="px-6 pb-6 bg-gray-50 border-t border-gray-100">
                     <div className="ml-12">
-                      <p className="text-gray-600 mb-3">
+                      <p className="text-gray-600 mb-4">
                         {typeof module === "object" && module.description
                           ? module.description
                           : "Comprehensive coverage with hands-on exercises."}
                       </p>
+                      {typeof module === "object" && module.subtopics && (
+                        <div className="space-y-3">
+                          {module.subtopics.map((subtopic, subtopicIndex) => (
+                            <div key={subtopicIndex} className="ml-4">
+                              <h5 className="font-semibold text-gray-700 mb-2">
+                                {subtopic.category}
+                              </h5>
+                              <ul className="space-y-1 ml-4">
+                                {subtopic.items.map((item, itemIndex) => (
+                                  <li
+                                    key={itemIndex}
+                                    className="text-sm text-gray-600 flex items-start"
+                                  >
+                                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                       {typeof module === "object" && module.tags && (
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 mt-4">
                           {module.tags.map((tag, tagIndex) => (
                             <span
                               key={tagIndex}
