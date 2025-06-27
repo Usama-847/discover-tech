@@ -1,46 +1,182 @@
 "use client";
 import React from "react";
 import BootcampComponent from "../../../components/BootcampComponent";
-import { Users } from "lucide-react";
+import { Users, Code, Monitor } from "lucide-react";
 
 const Cybersecurity = () => {
   const data = {
-    title: "Data Engineering Bootcamp",
+    title: "Cyber Security Bootcamp",
     description:
-      "Data Engineering is the process of designing, building and maintaining data infrastructure and pipelines to collect, store and process large volumes of data efficiently. It supports data analysis, machine learning, and business intelligence by ensuring data is clean, accessible, and reliable. With the growth of big data, IoT, and AI, data engineering has become a critical role in modern organizations. The demand for skilled data engineers is rapidly increasing across industries. In the future, automation, real-time processing, and cloud-native technologies will likely define this field's evolution.",
+      "Cyber Security is the practice of protecting systems, networks, and data from digital attacks, unauthorized access, and cyber threats. This field focuses on implementing defensive measures, monitoring systems for vulnerabilities, and responding to incidents in real time. As cyber threats grow more complex, skilled professionals are in high demand to safeguard sensitive information and maintain digital trust across industries.",
     duration: "03 Months",
-    schedule: "Wednesday, Thursday",
+    schedule: "Monday, Wednesday, Friday",
     startDate: "16 June, 2025",
     format: "Online & Interactive",
     instructor: {
-      name: "AMIR JABBAR",
+      name: "Khurram Shahid",
       title:
-        "Data Top Voice | Business Analyst @Engro Group | Keynote Speaker | Solving Business Problems with Data Analytics",
+        "Mobile App Development Expert | React Native Specialist | Industry Mentor | Empowering Businesses through Scalable Mobile Solutions",
       image: "/api/placeholder/200/250",
-      bio: "Amir is a globally experienced Business Data Analyst, currently serving in the Business Strategy & Development department at Quasico Inc. He empowers organizations with data-driven insights and innovative solutions. With a strong track record in multinational companies, he has driven transformations through analytical techniques such as predictive modeling, statistical analysis, and data visualization.",
+      bio: "Khurram Shahid is a skilled Mobile App Developer with extensive experience in building cross-platform mobile applications using React Native. With a strong foundation in frontend and backend integration, he has delivered high-performance apps for startups and enterprises alike. Currently mentoring aspiring developers, Khurram focuses on real-world application of React Native, UI/UX best practices, and app deployment strategies.",
       experience:
-        "Amir has trained over 100 professionals from top organizations like GSK, HBL, P&G, Marico, Easyss, UNCP, and Citi Bank, helping them acquire future-ready skills. Known for his interactive and hands-on teaching style, he delivers industry-relevant training that ensures practical and impactful learning.",
-      subtitle: "Senior Data Engineer",
+        "He has successfully trained professionals from leading organizations and has a passion for simplifying complex concepts through project-based learning. Known for his interactive sessions, Khurram ensures that learners not only understand the theory but also build production-ready mobile applications by the end of the course.",
+
       badges: [
-        { text: "Data Consultant", icon: Users, color: "green" },
-        { text: "Big Data Analytics Expert", color: "blue" },
+        { text: "Cyber Security Expert", icon: Users, color: "green" },
+        { text: "Cyber Security Expert", color: "blue" },
       ],
     },
     modules: [
-      { title: "Core Data Engineering Concepts" },
-      { title: "Python for Data Engineering" },
-      { title: "Scripting and Data Engineering with SQL" },
-      { title: "Data Wrangling" },
-      { title: "Cloud Computing" },
-      { title: "Data Visualization in Tableau" },
-      { title: "Real-Time Data Streaming" },
-      { title: "Data Pipelines Automation & Scheduling" },
-      { title: "Capstone Projects & Career Mentorship" },
+      {
+        title: "Module 1: Introduction to Cyber Security",
+
+        subtopics: [
+          {
+            items: [
+              "Overview of cyber security concepts",
+              "Types of cyber threats & attacks",
+              "Importance of cyber security in the digital world",
+              "Cyber security principles: CIA Triad (Confidentiality, Integrity, Availability)",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 2: Networking Fundamentals",
+
+        subtopics: [
+          {
+            items: [
+              "OSI & TCP/IP models",
+              "IP addressing, DNS, ports & protocols",
+              "Firewalls, proxies, and VPNs",
+              "Network devices and security zones",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 3: Operating Systems & System Security",
+
+        subtopics: [
+          {
+            items: [
+              "Windows and Linux OS basics",
+              "System vulnerabilities and hardening",
+              "Access control and file system permissions",
+              "OS security tools and practices",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 4: Cryptography",
+
+        subtopics: [
+          {
+            items: [
+              "Basics of encryption and decryption",
+              "Symmetric vs asymmetric encryption",
+              "Hashing, digital signatures, and certificates",
+              "Real-world cryptographic applications",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 5: Web & Application Security",
+
+        subtopics: [
+          {
+            items: [
+              "Web application architecture",
+              "Common web vulnerabilities (OWASP Top 10)",
+              "Secure coding practices",
+              "Penetration testing & vulnerability assessment tools",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 6: Network Security & Monitoring",
+
+        subtopics: [
+          {
+            items: [
+              "IDS/IPS systems",
+              "Packet analysis with Wireshark",
+              "Network security architecture",
+              "Logging and monitoring best practices",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 7: Ethical Hacking & Penetration Testing",
+
+        subtopics: [
+          {
+            items: [
+              "Phases of ethical hacking",
+              "Footprinting, scanning, enumeration",
+              "Exploitation and post-exploitation techniques",
+              "Kali Linux and Metasploit framework",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 8: Cyber Laws, Compliance & Risk Management",
+
+        subtopics: [
+          {
+            items: [
+              "Data protection laws (GDPR, HIPAA, etc.)",
+              "Security policies and governance",
+              "Risk analysis and mitigation",
+              "Compliance frameworks (ISO, NIST, PCI-DSS)",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 9: Capstone Project & Incident Response",
+
+        subtopics: [
+          {
+            items: [
+              "Create a full security audit/report",
+              "Simulate incident response scenario",
+              "Implement a defensive strategy",
+              "Final assessment & presentation",
+            ],
+          },
+        ],
+      },
     ],
-    tools: [],
+    tools: [
+      { name: "Python", icon: Code },
+      { name: "SQL", icon: Code },
+      { name: "Apache Airflow", icon: Monitor },
+      { name: "Apache Kafka", icon: Monitor },
+      { name: "Tableau", icon: Monitor },
+      { name: "AWS", icon: Monitor },
+      { name: "PySpark", icon: Code },
+      { name: "MySQL", icon: Monitor },
+      { name: "Talend", icon: Monitor },
+      { name: "Git", icon: Code },
+    ],
     heroMessage:
-      "Start your journey to a global career in Data Engineering! Gain hands-on skills and become an industry-ready professional",
-    certificationTitle: "DATA ENGINEER",
+      "Start your journey to a global career in Cyber Security! Gain hands-on skills and become an industry-ready professional",
+    certificationTitle: "Cyber Security Expert",
   };
 
   return <BootcampComponent {...data} />;

@@ -1,67 +1,182 @@
 "use client";
 import React from "react";
 import BootcampComponent from "../../../components/BootcampComponent";
-import { Plane, Code } from "lucide-react";
+import { Plane, Code, Users, Monitor } from "lucide-react";
 
 const AirlineReservation = () => {
   const data = {
     title: "Airline Reservation Bootcamp",
     description:
-      "Master the development of comprehensive airline reservation systems from scratch. Learn to build robust booking platforms, manage flight schedules, handle passenger data, and integrate payment gateways. This intensive program covers both frontend and backend development, database design, API integration, and system architecture specifically tailored for the aviation industry. Gain expertise in creating scalable, secure, and user-friendly airline booking systems that handle real-world complexities like seat management, pricing algorithms, and multi-airline integrations.",
-    duration: "04 Months",
-    schedule: "Monday, Wednesday, Friday",
-    startDate: "01 July, 2025",
+      "An Airline Reservation System is a web-based or desktop application that automates the process of booking airline tickets. It allows customers to search flights, check availability, reserve seats, make payments, and receive e-tickets in real-time. The system streamlines operations for airlines by managing schedules, fares, passenger data, and cancellations, ensuring efficient and user-friendly air travel experiences.",
+    duration: "02 Months",
+    schedule: "Monday, Friday",
+    startDate: "16 June, 2025",
     format: "Online & Interactive",
     instructor: {
-      name: "USAMA KHAN",
+      name: "MS Khan Yousafzai",
       title:
-        "Senior Software Engineer | Aviation Systems Specialist | Full-Stack Developer | Building Next-Gen Airline Solutions",
+        "Tech Mentor | Software Engineer | Expert in Travel Tech Systems | Transforming Airline Booking with Code",
       image: "/api/placeholder/200/250",
-      bio: "Usama is a highly experienced Software Engineer specializing in aviation and travel technology systems. Currently leading development teams at major airline tech companies, he has architected and built reservation systems that handle millions of bookings annually. With deep expertise in airline industry standards, GDS integrations, and modern web technologies, Usama brings real-world experience from working with major airlines and travel agencies.",
+      bio: "M S Khan Yousafzai is a seasoned Software Engineer and Airline Tech Specialist, renowned for his deep expertise in designing and building robust airline reservation systems. With a career spanning over a decade in software and travel technologies, he has helped streamline booking operations for various aviation and travel companies.Khan brings a practical, hands-on approach to teaching, ensuring students gain real-world skills in system architecture, flight search logic, booking engines, and payment integrations. He has mentored over 200 professionals and students in building scalable travel and booking platforms.",
       experience:
-        "Usama has successfully delivered 15+ airline reservation projects for companies like Emirates, Qatar Airways, and leading travel agencies. He has mentored over 200 developers in aviation software development, helping them transition into high-paying roles in the travel tech industry. Known for his practical approach and industry insights, he ensures students learn not just coding, but the business logic that drives airline operations.",
-      subtitle: "Aviation Systems Expert",
+        "Having worked closely with both startups and enterprise-level travel businesses, Khan is passionate about bridging the gap between theory and application in the travel tech space. His sessions are known for their clarity, industry relevance, and project-based learning that prepares students for real-world challenges.",
+      subtitle: "Senior Data Engineer",
       badges: [
-        { text: "Aviation Tech", icon: Plane, color: "green" },
-        { text: "Full-Stack Expert", icon: Code, color: "blue" },
+        { text: "Airline Ticket Expert", icon: Users, color: "green" },
+        { text: "GDS system expert", color: "blue" },
       ],
     },
     modules: [
-      { title: "Aviation Industry Fundamentals & Business Logic" },
-      { title: "Database Design for Airline Systems" },
-      { title: "Frontend Development with React & Airline UI/UX" },
-      { title: "Backend Development with Node.js & Express" },
-      { title: "Flight Search & Booking Engine Development" },
-      { title: "Payment Gateway Integration & Security" },
-      { title: "GDS (Global Distribution System) Integration" },
-      { title: "Seat Management & Aircraft Configuration" },
-      { title: "Pricing Algorithms & Revenue Management" },
-      { title: "Multi-airline Integration & API Development" },
-      { title: "Real-time Notifications & Communication Systems" },
-      { title: "Testing, Deployment & System Maintenance" },
-      { title: "Capstone Project: Complete Airline Reservation System" },
+      {
+        title: "Module 1: Introduction to Airline Reservation Systems",
+
+        subtopics: [
+          {
+            items: [
+              "Overview of the airline industry operations.",
+              "Key components of reservation systems.",
+              "Importance of automation and real-time booking",
+              "System requirements and architecture",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 2: Database Design & Management",
+
+        subtopics: [
+          {
+            items: [
+              "Entity-Relationship (ER) modeling",
+              "Designing flight schedules, airports, bookings, and users tables",
+              "Relational database schema design (e.g., MySQL/PostgreSQL)",
+              "Data normalization and integrity constraints",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 3: Frontend Development",
+
+        subtopics: [
+          {
+            items: [
+              "User Interface design principles for travel systems",
+              "Building search forms, booking screens, seat maps",
+              "HTML, CSS, JavaScript basics (or React for advanced UI)",
+              "Responsive and accessible design",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 4: Backend Development",
+
+        subtopics: [
+          {
+            items: [
+              "Building RESTful APIs for bookings, payments, and schedules",
+              "Authentication and user roles (admin, customer, agent)",
+              "Integration with database",
+              "Technologies: Node.js, Express.js, or Django/Flask",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 5: Flight Search & Booking Logic",
+
+        subtopics: [
+          {
+            items: [
+              "Building the flight search engine (by destination, date, class, etc.)",
+              "Real-time seat availability",
+              "Booking confirmation and ticket generation logic",
+              "Handling bookings and waitlists",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 6: Payment Gateway Integration",
+
+        subtopics: [
+          {
+            items: [
+              "Understanding payment flow",
+              "Integrating Stripe, PayPal, or other gateways",
+              "Handling payment failures and refunds",
+              "Secure transactions with SSL and tokens",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 7: Admin Panel & Airline Management",
+
+        subtopics: [
+          {
+            items: [
+              "Admin dashboard for managing flights, aircraft, pricing, and schedules",
+              "Managing booking history and customer data",
+              "Reporting tools and analytics",
+              "Role-based access control",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 8: Deployment & Cloud Hosting",
+
+        subtopics: [
+          {
+            items: [
+              "Hosting on AWS, Azure, or Firebase",
+              "Using Docker and GitHub for CI/CD",
+              "Environment setup (production vs development)",
+              "Backup and recovery",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 9: Final Project & Case Study",
+
+        subtopics: [
+          {
+            items: [
+              "Build a complete Airline Reservation System",
+              "Include real-world features like multi-city booking, email/SMS ticketing",
+              "Code documentation and presentation",
+              "Feedback and mentorship session",
+            ],
+          },
+        ],
+      },
     ],
     tools: [
-      { name: "React", icon: null },
-      { name: "Node.js", icon: null },
-      { name: "MongoDB", icon: null },
-      { name: "Express.js", icon: null },
-      { name: "AWS", icon: null },
-      { name: "Stripe", icon: null },
-      { name: "Socket.io", icon: null },
-      { name: "Docker", icon: null },
-      { name: "Redis", icon: null },
-      { name: "JWT", icon: null },
+      { name: "Python", icon: Code },
+      { name: "SQL", icon: Code },
+      { name: "Apache Airflow", icon: Monitor },
+      { name: "Apache Kafka", icon: Monitor },
+      { name: "Tableau", icon: Monitor },
+      { name: "AWS", icon: Monitor },
+      { name: "PySpark", icon: Code },
+      { name: "MySQL", icon: Monitor },
+      { name: "Talend", icon: Monitor },
+      { name: "Git", icon: Code },
     ],
     heroMessage:
-      "Launch your career in Aviation Technology! Build real-world airline systems and become an industry expert",
-    certificationTitle: "AIRLINE SYSTEMS DEVELOPER",
-    instructorStats: [
-      { value: "15+", label: "Airline Projects", color: "blue" },
-      { value: "200+", label: "Students Mentored", color: "green" },
-      { value: "8+", label: "Years Experience", color: "purple" },
-      { value: "100%", label: "Job Placement", color: "orange" },
-    ],
+      "Start your journey to a global career in Data Engineering! Gain hands-on skills and become an industry-ready professional",
+    certificationTitle: "AIRLINE RESERVATION",
   };
 
   return <BootcampComponent {...data} />;

@@ -1,46 +1,182 @@
 "use client";
 import React from "react";
 import BootcampComponent from "../../../components/BootcampComponent";
-import { Users } from "lucide-react";
+import { Plane, Code, Users, Monitor } from "lucide-react";
 
 const MobileDevelopment = () => {
   const data = {
-    title: "Data Engineering Bootcamp",
+    title: "Mobile App Development (React Native)",
     description:
-      "Data Engineering is the process of designing, building and maintaining data infrastructure and pipelines to collect, store and process large volumes of data efficiently. It supports data analysis, machine learning, and business intelligence by ensuring data is clean, accessible, and reliable. With the growth of big data, IoT, and AI, data engineering has become a critical role in modern organizations. The demand for skilled data engineers is rapidly increasing across industries. In the future, automation, real-time processing, and cloud-native technologies will likely define this field's evolution.",
+      "A React Native Mobile App Developer specializes in building cross-platform mobile applications for iOS and Android using JavaScript and the React Native framework. They create high-performance, user-friendly apps with native-like experiences, handling everything from UI design to backend integration.",
     duration: "03 Months",
-    schedule: "Wednesday, Thursday",
+    schedule: "Monday, Wednesday, Friday",
     startDate: "16 June, 2025",
     format: "Online & Interactive",
     instructor: {
-      name: "AMIR JABBAR",
+      name: "Khurram Shahid",
       title:
-        "Data Top Voice | Business Analyst @Engro Group | Keynote Speaker | Solving Business Problems with Data Analytics",
+        "Mobile App Development Expert | React Native Specialist | Industry Mentor | Empowering Businesses through Scalable Mobile Solutions",
       image: "/api/placeholder/200/250",
-      bio: "Amir is a globally experienced Business Data Analyst, currently serving in the Business Strategy & Development department at Quasico Inc. He empowers organizations with data-driven insights and innovative solutions. With a strong track record in multinational companies, he has driven transformations through analytical techniques such as predictive modeling, statistical analysis, and data visualization.",
+      bio: "Khurram Shahid is a skilled Mobile App Developer with extensive experience in building cross-platform mobile applications using React Native. With a strong foundation in frontend and backend integration, he has delivered high-performance apps for startups and enterprises alike. Currently mentoring aspiring developers, Khurram focuses on real-world application of React Native, UI/UX best practices, and app deployment strategies.",
       experience:
-        "Amir has trained over 100 professionals from top organizations like GSK, HBL, P&G, Marico, Easyss, UNCP, and Citi Bank, helping them acquire future-ready skills. Known for his interactive and hands-on teaching style, he delivers industry-relevant training that ensures practical and impactful learning.",
-      subtitle: "Senior Data Engineer",
+        "He has successfully trained professionals from leading organizations and has a passion for simplifying complex concepts through project-based learning. Known for his interactive sessions, Khurram ensures that learners not only understand the theory but also build production-ready mobile applications by the end of the course.",
+      subtitle: "Mobile App Development",
       badges: [
-        { text: "Data Consultant", icon: Users, color: "green" },
-        { text: "Big Data Analytics Expert", color: "blue" },
+        { text: "React Native", icon: Users, color: "green" },
+        { text: "Mobile App Developer", color: "blue" },
       ],
     },
     modules: [
-      { title: "Core Data Engineering Concepts" },
-      { title: "Python for Data Engineering" },
-      { title: "Scripting and Data Engineering with SQL" },
-      { title: "Data Wrangling" },
-      { title: "Cloud Computing" },
-      { title: "Data Visualization in Tableau" },
-      { title: "Real-Time Data Streaming" },
-      { title: "Data Pipelines Automation & Scheduling" },
-      { title: "Capstone Projects & Career Mentorship" },
+      {
+        title: "Module 1: Introduction to React Native & Environment Setup",
+
+        subtopics: [
+          {
+            items: [
+              "What is React Native?",
+              "Cross-platform mobile development concepts",
+              "Setting up development environment (Expo CLI & React Native CLI)",
+              "Creating your first React Native app",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 2: React Fundamentals for Mobile Apps",
+
+        subtopics: [
+          {
+            items: [
+              "JSX, components, props, and state",
+              "Functional vs Class components",
+              "Component lifecycle",
+              "Event handling in React Native",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 3: React Native Core Components & Styling",
+
+        subtopics: [
+          {
+            items: [
+              "Core components: View, Text, Image, ScrollView, TextInput, etc.",
+              "Flexbox layout in React Native",
+              "Platform-specific design (iOS vs Android)",
+              "Responsive & adaptive design",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 4: Navigation and Routing",
+
+        subtopics: [
+          {
+            items: [
+              "Installing React Navigation",
+              "Stack, Tab, Drawer navigation",
+              "Passing data between screens",
+              "Deep linking and screen transitions",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 5: State Management",
+
+        subtopics: [
+          {
+            items: [
+              "Lifting state up",
+              "Context API",
+              "Redux: Actions, Reducers, Store",
+              "Using Redux Toolkit (RTK)",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 6: API Integration & Backend Communication",
+
+        subtopics: [
+          {
+            items: [
+              "Fetching data using REST APIs (Axios & Fetch)",
+              "Handling loading, success, and error states",
+              "CRUD operations",
+              "Introduction to GraphQL (optional)",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 7: Advanced Features & Device APIs",
+
+        subtopics: [
+          {
+            items: [
+              "Accessing device features: Camera, Geolocation, Vibration, etc.",
+              "Push notifications (Firebase/OneSignal)",
+              "Local storage (AsyncStorage, MMKV)",
+              "Permissions and background tasks",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 8: App Deployment & Optimization",
+
+        subtopics: [
+          {
+            items: [
+              "Debugging and performance tips",
+              "App testing (manual & automated)",
+              "Building and deploying apps to Play Store & App Store",
+              "Versioning, signing, and OTA updates with Expo",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 9: Capstone Project & Interview Preparation",
+
+        subtopics: [
+          {
+            items: [
+              "Build a complete mobile app (e.g., To-do App, E-commerce App)",
+              "Code review & documentation",
+              "Git & GitHub for version control",
+              "Resume building & interview preparation tips for React Native roles",
+            ],
+          },
+        ],
+      },
     ],
-    tools: [],
+    tools: [
+      { name: "Python", icon: Code },
+      { name: "SQL", icon: Code },
+      { name: "Apache Airflow", icon: Monitor },
+      { name: "Apache Kafka", icon: Monitor },
+      { name: "Tableau", icon: Monitor },
+      { name: "AWS", icon: Monitor },
+      { name: "PySpark", icon: Code },
+      { name: "MySQL", icon: Monitor },
+      { name: "Talend", icon: Monitor },
+      { name: "Git", icon: Code },
+    ],
     heroMessage:
-      "Start your journey to a global career in Data Engineering! Gain hands-on skills and become an industry-ready professional",
-    certificationTitle: "DATA ENGINEER",
+      "Start your journey to a global career in Mobile App Development! Gain hands-on skills and become an industry-ready professional",
+    certificationTitle: "Mobile App Developer",
   };
 
   return <BootcampComponent {...data} />;
