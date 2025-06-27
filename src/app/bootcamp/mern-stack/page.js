@@ -1,46 +1,190 @@
 "use client";
 import React from "react";
 import BootcampComponent from "../../../components/BootcampComponent";
-import { Users } from "lucide-react";
+import { Plane, Code, Users, Monitor } from "lucide-react";
 
 const MERNstack = () => {
   const data = {
-    title: "Data Engineering Bootcamp",
+    title: "MERN Stack Develpment",
     description:
-      "Data Engineering is the process of designing, building and maintaining data infrastructure and pipelines to collect, store and process large volumes of data efficiently. It supports data analysis, machine learning, and business intelligence by ensuring data is clean, accessible, and reliable. With the growth of big data, IoT, and AI, data engineering has become a critical role in modern organizations. The demand for skilled data engineers is rapidly increasing across industries. In the future, automation, real-time processing, and cloud-native technologies will likely define this field's evolution.",
+      "MERN Stack Development is a full-stack JavaScript framework using MongoDB, Express.js, React.js, and Node.js to build dynamic web applications. It enables developers to create powerful, scalable, and responsive apps using a single programming language across the entire tech stack—JavaScript.",
     duration: "03 Months",
-    schedule: "Wednesday, Thursday",
+    schedule: "Tuesday, Thursday, Saturday",
     startDate: "16 June, 2025",
     format: "Online & Interactive",
     instructor: {
-      name: "AMIR JABBAR",
+      name: "Muhammad Ubaud Ur Rehman",
       title:
-        "Data Top Voice | Business Analyst @Engro Group | Keynote Speaker | Solving Business Problems with Data Analytics",
+        "Full-Stack Developer | MERN Stack Expert | Tech Mentor | Transforming Ideas into Scalable Web Applications",
       image: "/api/placeholder/200/250",
-      bio: "Amir is a globally experienced Business Data Analyst, currently serving in the Business Strategy & Development department at Quasico Inc. He empowers organizations with data-driven insights and innovative solutions. With a strong track record in multinational companies, he has driven transformations through analytical techniques such as predictive modeling, statistical analysis, and data visualization.",
+      bio: "Ubaid is a skilled Full-Stack Web Developer with deep expertise in the MERN Stack (MongoDB, Express.js, React, Node.js). With hands-on experience in building dynamic and scalable web applications, he helps students and professionals master modern web development tools and techniques.Currently mentoring developers and leading tech initiatives, Ubaid specializes in turning complex technical concepts into simple, practical lessons. He has trained over 100 aspiring developers and working professionals across various industries, empowering them with the skills needed to thrive in today’s digital world.",
       experience:
-        "Amir has trained over 100 professionals from top organizations like GSK, HBL, P&G, Marico, Easyss, UNCP, and Citi Bank, helping them acquire future-ready skills. Known for his interactive and hands-on teaching style, he delivers industry-relevant training that ensures practical and impactful learning.",
-      subtitle: "Senior Data Engineer",
+        "Known for his project-based teaching style, Ubaid delivers real-world training that focuses on practical implementation, helping learners build portfolio-ready projects and industry-relevant expertise.",
+      subtitle: "MERN Stack Development",
       badges: [
-        { text: "Data Consultant", icon: Users, color: "green" },
-        { text: "Big Data Analytics Expert", color: "blue" },
+        { text: "Full Stack Development", icon: Users, color: "green" },
+        { text: "MERN Stack", color: "blue" },
       ],
     },
     modules: [
-      { title: "Core Data Engineering Concepts" },
-      { title: "Python for Data Engineering" },
-      { title: "Scripting and Data Engineering with SQL" },
-      { title: "Data Wrangling" },
-      { title: "Cloud Computing" },
-      { title: "Data Visualization in Tableau" },
-      { title: "Real-Time Data Streaming" },
-      { title: "Data Pipelines Automation & Scheduling" },
-      { title: "Capstone Projects & Career Mentorship" },
+      {
+        title: "Module 1: Introduction to Web Development & JavaScript",
+
+        subtopics: [
+          {
+            items: [
+              "Basics of web development (frontend vs backend)",
+              "HTML, CSS fundamentals",
+              "JavaScript ES6+ concepts",
+              "DOM manipulation",
+              "Understanding how the web works (HTTP, REST)",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 2: React.js - Frontend Development",
+
+        subtopics: [
+          {
+            items: [
+              "Introduction to React and component-based architecture",
+              "JSX, props, state, and event handling",
+              "React hooks (useState, useEffect, etc.)",
+              "Routing using React Router",
+              "Conditional rendering and lists",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 3: Advanced React & State Management",
+
+        subtopics: [
+          {
+            items: [
+              "Context API and custom hooks",
+              "Form handling and validation",
+              "Working with APIs (Fetch, Axios)",
+              "Redux or Zustand for global state management",
+              "Performance optimization in React",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 4: Node.js - Backend Basics",
+
+        subtopics: [
+          {
+            items: [
+              "Introduction to Node.js and npm",
+              "Understanding asynchronous programming (callbacks, promises, async/await)",
+              "File system and environment setup",
+              "Creating servers using HTTP and Express.js",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 5: Express.js - REST API Development",
+
+        subtopics: [
+          {
+            items: [
+              "Creating and managing RESTful APIs",
+              "Route handling and middleware",
+              "Error handling and status codes",
+              "Using Postman for API testing",
+              "Securing APIs with headers and tokens",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 6: MongoDB - Database Integration",
+
+        subtopics: [
+          {
+            items: [
+              "Introduction to NoSQL and MongoDB",
+              "MongoDB Atlas setup",
+              "CRUD operations (Create, Read, Update, Delete)",
+              "Data modeling with Mongoose",
+              "Relationships using refs and embedded documents",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 7: Full-Stack Integration (MERN)",
+
+        subtopics: [
+          {
+            items: [
+              "Connecting React frontend with Node/Express backend",
+              "Fetching and displaying data in React",
+              "Form submission from React to backend",
+              "Managing loading and error states",
+              "Deploying both backend and frontend locally",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 8: Authentication & Authorization",
+
+        subtopics: [
+          {
+            items: [
+              "User registration and login systems",
+              "JWT (JSON Web Tokens) for authentication",
+              "Password hashing with bcrypt",
+              "Role-based access control",
+              "Session management",
+            ],
+          },
+        ],
+      },
+
+      {
+        title: "Module 9: Deployment, DevOps & Final Project",
+
+        subtopics: [
+          {
+            items: [
+              "Environment variables and production settings",
+              "Hosting backend (e.g., Render, Railway)",
+              "Deploying frontend (e.g., Vercel, Netlify)",
+              "Git & GitHub for version control",
+              "Final capstone project: A full MERN app with auth, CRUD, and deployment",
+            ],
+          },
+        ],
+      },
     ],
-    tools: [],
+    tools: [
+      { name: "Python", icon: Code },
+      { name: "SQL", icon: Code },
+      { name: "Apache Airflow", icon: Monitor },
+      { name: "Apache Kafka", icon: Monitor },
+      { name: "Tableau", icon: Monitor },
+      { name: "AWS", icon: Monitor },
+      { name: "PySpark", icon: Code },
+      { name: "MySQL", icon: Monitor },
+      { name: "Talend", icon: Monitor },
+      { name: "Git", icon: Code },
+    ],
     heroMessage:
       "Start your journey to a global career in Data Engineering! Gain hands-on skills and become an industry-ready professional",
-    certificationTitle: "DATA ENGINEER",
+    certificationTitle: "MERN STACK DEVELOPMENT",
   };
 
   return <BootcampComponent {...data} />;

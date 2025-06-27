@@ -57,9 +57,9 @@ const Navbar = () => {
   const bootcampOptions = [
     { name: "All Bootcamps", path: "/bootcamp" },
     { name: "Web Development", path: "/bootcamp/web-development" },
-    { name: "Data Science", path: "/bootcamp/data-science" },
+    // { name: "Data Science", path: "/bootcamp/data-science" },
     { name: "Digital Marketing", path: "/bootcamp/digital-marketing" },
-    { name: "Data Engineering Bootcamp", path: "/bootcamp/data-engineering" },
+    // { name: "Data Engineering Bootcamp", path: "/bootcamp/data-engineering" },
     { name: "Airline Reservation", path: "/bootcamp/airline-reservation" },
     { name: "Data Analytics Bootcamp", path: "/bootcamp/data-analytics" },
     { name: "Business Analytics", path: "/bootcamp/business-analytics" },

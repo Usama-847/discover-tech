@@ -175,7 +175,7 @@ const BootcampComponent = ({
                       <p className="text-gray-600 mb-4">
                         {typeof module === "object" && module.description
                           ? module.description
-                          : "Comprehensive coverage with hands-on exercises."}
+                          : ""}
                       </p>
                       {typeof module === "object" && module.subtopics && (
                         <div className="space-y-3">
