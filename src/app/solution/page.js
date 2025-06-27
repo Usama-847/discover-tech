@@ -166,12 +166,12 @@ export default function Solution() {
         </div>
 
         <div className="relative z-10">
-          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-black to-gray-700 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-black to-gray-700 bg-clip-text text-transparent">
             Your Trusted Partner in{" "}
             <span className="bg-gradient-to-r from-gray-900 to-black bg-clip-text text-transparent">
               AI Development
             </span>
-          </h1>
+          </h2>
         </div>
       </section>
 
@@ -337,18 +337,18 @@ export default function Solution() {
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
         <div className="relative z-10">
-          <h2 className="text-4xl font-bold text-center mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
             Turn Your Vision into a Market-Ready Solution
           </h2>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16 text-lg">
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16 text-base md:text-lg">
             Our user-focused MVP development process lays a strong foundation,
             ensuring your product is ready for the market before full-scale
             development begins.
           </p>
 
           <div className="max-w-4xl mx-auto relative">
-            {/* 3D Vertical line with pepper gradient */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gray-600 via-black to-gray-800 shadow-lg shadow-gray-500/50 rounded-full"></div>
+            {/* Vertical line */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gray-600 via-black to-gray-800 shadow-lg shadow-gray-500/50 rounded-full"></div>
 
             {[
               {
@@ -396,16 +396,16 @@ export default function Solution() {
             ].map((step, idx) => (
               <div
                 key={step.name}
-                className="flex items-center mb-12 w-full group"
+                className="flex flex-col md:flex-row items-center mb-12 w-full group"
                 style={{
                   animationDelay: `${idx * 200}ms`,
                   animation: "slideInFromSide 0.8s ease-out forwards",
                 }}
               >
-                {/* Left side content */}
-                <div className="w-1/2 pr-8">
+                {/* Left content (desktop) */}
+                <div className="md:w-1/2 md:pr-8 w-full mb-6 md:mb-0">
                   {idx % 2 === 0 && (
-                    <div className="flex justify-end">
+                    <div className="flex md:justify-end justify-center">
                       <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 max-w-sm group-hover:scale-105 group-hover:-translate-y-1 group-hover:rotate-1">
                         <div className="flex items-center mb-3">
                           <div
@@ -425,23 +425,18 @@ export default function Solution() {
                   )}
                 </div>
 
-                {/* Center circle */}
-                <div className="relative z-10 flex-shrink-0">
-                  <div
-                    className={`w-16 h-16 rounded-full bg-gradient-to-r from-${step.color}-600 to-${step.color}-800 text-white flex items-center justify-center font-bold text-lg shadow-2xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 border-4 border-white`}
-                  >
+                {/* Center timeline marker */}
+                <div className="relative z-10 mb-6 md:mb-0">
+                  <div className="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center font-bold text-lg shadow-2xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 border-4 border-white">
                     {idx + 1}
                   </div>
-                  {/* Glow effect */}
-                  <div
-                    className={`absolute inset-0 w-16 h-16 rounded-full bg-gradient-to-r from-${step.color}-600 to-${step.color}-800 blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500`}
-                  ></div>
+                  <div className="absolute inset-0 w-16 h-16 rounded-full bg-black blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
                 </div>
 
-                {/* Right side content */}
-                <div className="w-1/2 pl-8">
+                {/* Right content (desktop) */}
+                <div className="md:w-1/2 md:pl-8 w-full">
                   {idx % 2 !== 0 && (
-                    <div className="flex justify-start">
+                    <div className="flex md:justify-start justify-center">
                       <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 max-w-sm group-hover:scale-105 group-hover:-translate-y-1 group-hover:-rotate-1">
                         <div className="flex items-center mb-3">
                           <div
