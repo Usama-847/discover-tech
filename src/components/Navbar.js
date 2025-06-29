@@ -57,9 +57,7 @@ const Navbar = () => {
   const bootcampOptions = [
     { name: "All Bootcamps", path: "/bootcamp" },
     { name: "Web Development", path: "/bootcamp/web-development" },
-    // { name: "Data Science", path: "/bootcamp/data-science" },
     { name: "Digital Marketing", path: "/bootcamp/digital-marketing" },
-    // { name: "Data Engineering Bootcamp", path: "/bootcamp/data-engineering" },
     { name: "Airline Reservation", path: "/bootcamp/airline-reservation" },
     { name: "Data Analytics Bootcamp", path: "/bootcamp/data-analytics" },
     { name: "Business Analytics", path: "/bootcamp/business-analytics" },
@@ -79,6 +77,17 @@ const Navbar = () => {
   const handleMenuItemClick = () => {
     setIsMenuOpen(false);
     setIsBootcampOpen(false);
+  };
+
+  // Handle bootcamp link click in mobile
+  const handleBootcampLinkClick = (e, path) => {
+    e.preventDefault();
+    e.stopPropagation();
+    handleMenuItemClick();
+    // Small delay to ensure state updates before navigation
+    setTimeout(() => {
+      window.location.href = path;
+    }, 100);
   };
 
   return (
@@ -293,7 +302,7 @@ const Navbar = () => {
         </div>
 
         {/* Menu Content */}
-        <div className="flex flex-col justify-center items-center h-full px-8 space-y-8">
+        <div className="flex flex-col justify-center items-center h-full px-8 space-y-8 overflow-y-auto pt-20 pb-8">
           {/* Home */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -362,14 +371,14 @@ const Navbar = () => {
             </button>
           </motion.div>
 
-          {/* Bootcamp Dropdown */}
+          {/* Bootcamp Dropdown - Fixed for mobile */}
           {isBootcampOpen && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="mt-6 w-full max-w-sm mx-auto"
+              className="w-full max-w-sm mx-auto"
             >
               <div className="max-h-64 overflow-y-auto bg-white/30 rounded-lg p-4 backdrop-blur-sm scrollbar-hide">
                 <style jsx>{`
@@ -389,13 +398,12 @@ const Navbar = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.03 }}
                     >
-                      <Link
-                        href={option.path}
-                        onClick={handleMenuItemClick}
-                        className="block text-lg font-medium text-black hover:text-gray-600 transition-all duration-200 hover:scale-105 text-center py-2 px-3 rounded-md hover:bg-white/20"
+                      <button
+                        onClick={(e) => handleBootcampLinkClick(e, option.path)}
+                        className="block w-full text-lg font-medium text-black hover:text-gray-600 transition-all duration-200 hover:scale-105 text-center py-2 px-3 rounded-md hover:bg-white/20 cursor-pointer"
                       >
                         {option.name}
-                      </Link>
+                      </button>
                     </motion.div>
                   ))}
                 </div>
