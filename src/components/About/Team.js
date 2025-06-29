@@ -30,7 +30,8 @@ const TeamGallery = () => {
     <section className="px-6 py-16 bg-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-center">
-          Our Team
+          Making Every Impression Count Bridging Global Communities for an
+          Impactful Future.
         </h2>
 
         <div className="grid grid-cols-3 gap-4 auto-rows-auto">
