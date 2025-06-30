@@ -12,41 +12,36 @@ const TestimonialsSection = () => {
       id: 1,
       name: "Anonymous Client",
       role: "UI/UX",
-      //   image: "/api/placeholder/80/80",
       testimonial:
-        "Attention to detail, very well thought of Line of blockchain business, professional team with great expertise in Web3 development.",
+        "Attention to detail, thoughtful product strategy, and a professional team with deep expertise in web and mobile development. Truly reliable.",
     },
     {
       id: 2,
       name: "Sarah Johnson",
       role: "Product Manager",
-      //   image: "/api/placeholder/80/80",
       testimonial:
-        "Outstanding work on our DeFi platform. The team delivered beyond expectations with innovative solutions and seamless user experience.",
+        "Outstanding work on our AI-driven platform. The Discover Tech team delivered beyond expectations with innovative features and a seamless user experience.",
     },
     {
       id: 3,
       name: "Michael Chen",
       role: "CTO",
-      //   image: "/api/placeholder/80/80",
       testimonial:
-        "Quecko transformed our vision into reality. Their blockchain expertise and dedication to quality made all the difference in our project success.",
+        "Discover Tech transformed our idea into a scalable solution. Their technical expertise and commitment to quality made all the difference in our success.",
     },
     {
       id: 4,
       name: "Emily Rodriguez",
       role: "Founder",
-      //   image: "/api/placeholder/80/80",
       testimonial:
-        "Working with Quecko was a game-changer. Their technical knowledge and professional approach helped us launch our Web3 product successfully.",
+        "Working with Discover Tech was a turning point. Their AI/ML capabilities and mobile app development skills helped us launch our product efficiently.",
     },
     {
       id: 5,
       name: "David Thompson",
       role: "Marketing Director",
-      //   image: "/api/placeholder/80/80",
       testimonial:
-        "The team's creativity and technical skills are unmatched. They delivered a cutting-edge solution that exceeded our expectations.",
+        "The team's creativity and technical proficiency are unmatched. They delivered a powerful, user-friendly web solution that exceeded our goals.",
     },
   ];
 

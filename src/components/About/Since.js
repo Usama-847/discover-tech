@@ -14,19 +14,19 @@ const GoalSection = () => {
         {/* Right Side - Description */}
         <div className="w-full md:w-1/2 text-lg text-justify leading-7 text-gray-800">
           <p>
-            Our story began with a small, passionate team of four visionaries
-            who believed in the transformative power of blockchain technology.
-            From these humble beginnings, Quecko has grown into a powerhouse of
-            over 100+ talented professionals. Each team member represents a
-            unique building block, much like the individual blocks in a
-            blockchain, contributing to the strength, resilience, and innovation
-            of our company. Our commitment to pioneering Web3 solutions has
-            enabled us to help businesses navigate the complexities of
-            blockchain, creating decentralized applications and software that
-            drive progress and innovation. We take pride in our role as the
-            architects of a decentralized future, where every block and every
-            team member plays a crucial part in building a more connected and
-            empowered world.
+            Our journey began with a small, passionate team of four visionaries
+            who believed in the transformative power of technology. From these
+            humble beginnings, Discover Tech has grown into a powerhouse of over
+            100+ talented professionals. Each team member brings unique
+            expertise—like building blocks forming a strong, intelligent
+            system—contributing to our culture of innovation, resilience, and
+            excellence. As pioneers in web, mobile, and AI/ML/LLM solutions, we
+            help businesses and creators navigate the evolving digital
+            landscape. From intuitive web platforms to intelligent AI-powered
+            systems, we build products that drive real-world impact. We take
+            pride in being the architects of a smarter, more connected
+            future—where every team member plays a vital role in turning bold
+            ideas into lasting solutions.
           </p>
         </div>
       </div>
