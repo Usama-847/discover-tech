@@ -38,12 +38,12 @@ const WhoSection = () => {
           {/* Right Side - Statistics */}
           <div className="p-0 lg:p-0">
             <p className="text-gray-100 text-sm sm:text-base lg:text-lg leading-relaxed">
-              We are a team of designers, developers and marketers that blend
-              design, development, and strategy to bring bold Web3 ideas to
-              life. From startups building their first smart contracts to
-              established brands entering the blockchain space, we craft
-              tailored solutions that are technically sound, creatively sharp,
-              and strategically smart.
+              We are a team of designers, developers, and strategists who blend
+              creativity, technology, and vision to bring bold digital ideas to
+              life. Whether it's startups building their first web or mobile
+              app, or enterprises integrating AI and machine learning into their
+              workflows, Discover Tech crafts tailored solutions that are
+              technically robust, creatively sharp, and strategically smart.
             </p>
           </div>
         </div>

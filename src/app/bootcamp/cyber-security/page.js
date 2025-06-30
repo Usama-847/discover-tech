@@ -16,15 +16,15 @@ const Cybersecurity = () => {
       name: "Khurram Shahid",
       title:
         "Mobile App Development Expert | React Native Specialist | Industry Mentor | Empowering Businesses through Scalable Mobile Solutions",
-      image: "/api/placeholder/200/250",
+      image: "/images/courses/Khuram-002 (1).png",
       bio: "Khurram Shahid is a skilled Mobile App Developer with extensive experience in building cross-platform mobile applications using React Native. With a strong foundation in frontend and backend integration, he has delivered high-performance apps for startups and enterprises alike. Currently mentoring aspiring developers, Khurram focuses on real-world application of React Native, UI/UX best practices, and app deployment strategies.",
       experience:
         "He has successfully trained professionals from leading organizations and has a passion for simplifying complex concepts through project-based learning. Known for his interactive sessions, Khurram ensures that learners not only understand the theory but also build production-ready mobile applications by the end of the course.",
 
-      badges: [
-        { text: "Cyber Security Expert", icon: Users, color: "green" },
-        { text: "Cyber Security Expert", color: "blue" },
-      ],
+      // badges: [
+      //   { text: "Cyber Security Expert", icon: Users, color: "green" },
+      //   { text: "Cyber Security Expert", color: "blue" },
+      // ],
     },
     modules: [
       {

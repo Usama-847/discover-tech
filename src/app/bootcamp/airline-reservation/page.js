@@ -16,15 +16,15 @@ const AirlineReservation = () => {
       name: "MS Khan Yousafzai",
       title:
         "Tech Mentor | Software Engineer | Expert in Travel Tech Systems | Transforming Airline Booking with Code",
-      image: "/api/placeholder/200/250",
+      image: "/images/courses/post-001 Landscape.png",
       bio: "M S Khan Yousafzai is a seasoned Software Engineer and Airline Tech Specialist, renowned for his deep expertise in designing and building robust airline reservation systems. With a career spanning over a decade in software and travel technologies, he has helped streamline booking operations for various aviation and travel companies.Khan brings a practical, hands-on approach to teaching, ensuring students gain real-world skills in system architecture, flight search logic, booking engines, and payment integrations. He has mentored over 200 professionals and students in building scalable travel and booking platforms.",
       experience:
         "Having worked closely with both startups and enterprise-level travel businesses, Khan is passionate about bridging the gap between theory and application in the travel tech space. His sessions are known for their clarity, industry relevance, and project-based learning that prepares students for real-world challenges.",
-      subtitle: "Senior Data Engineer",
-      badges: [
-        { text: "Airline Ticket Expert", icon: Users, color: "green" },
-        { text: "GDS system expert", color: "blue" },
-      ],
+      // subtitle: "Senior Data Engineer",
+      // badges: [
+      //   { text: "Airline Ticket Expert", icon: Users, color: "green" },
+      //   { text: "GDS system expert", color: "blue" },
+      // ],
     },
     modules: [
       {

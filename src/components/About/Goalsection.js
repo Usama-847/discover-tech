@@ -15,12 +15,13 @@ const GoalSection = () => {
         <div className="w-full md:w-1/2 text-lg text-justify leading-7 text-gray-800">
           <p>
             Our mission is to empower businesses, creators, and innovators with
-            the tools, technology, and expertise they need to succeed in a
-            decentralized world. The digital landscape is evolving, and
-            blockchain is at the heart of this transformation. Yet, many
-            struggle to navigate its complexities. Quecko bridges this gap by
-            delivering secure, scalable, and innovative blockchain solutions
-            that drive real-world impact.
+            the technology, tools, and expertise they need to thrive in a
+            rapidly evolving digital world. As the landscape shifts toward
+            intelligent automation and digital experiences, many face challenges
+            navigating modern technologies. Discover Tech bridges this gap by
+            delivering secure, scalable, and cutting-edge solutions in web
+            development, mobile apps, and AI/ML/LLM, helping our clients create
+            meaningful real-world impact.
           </p>
         </div>
       </div>

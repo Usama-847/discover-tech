@@ -16,15 +16,15 @@ const DataAnalytics = () => {
       name: "AMir Jabbar",
       title:
         "Data Top Voice | Business Analyst @Engro Group | Keynote Speaker | Solving Business Problems with Data Analytics",
-      image: "/api/placeholder/200/250",
+      image: "/images/courses/Amir Bhai-002.png",
       bio: "Amir is a globally experienced Business Data Analyst, currently serving in the Business Strategy & Development department at Quecko Inc. He empowers organizations with data-driven insights and innovative solutions. With a strong track record in multinational companies, He has driven transformations through analytical techniques such as customer analysis, churn analysis, and product- level analysis.",
       experience:
         "Amir has trained over 100 professionals from top organizations like GSK, HBL, PSO, Nokia, Etisalat, UNDP, and Citi Bank, helping them acquire future-ready skills. Known for his interactive and hands-on teaching style, He delivers industry-relevant training that ensures practical and impactful learning.",
 
-      badges: [
-        { text: "Big Data Analytics Expert", icon: Users, color: "green" },
-        { text: "Data Consultant", color: "blue" },
-      ],
+      // badges: [
+      //   { text: "Big Data Analytics Expert", icon: Users, color: "green" },
+      //   { text: "Data Consultant", color: "blue" },
+      // ],
     },
     modules: [
       {

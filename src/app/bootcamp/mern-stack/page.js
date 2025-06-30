@@ -16,15 +16,15 @@ const MERNstack = () => {
       name: "Muhammad Ubaud Ur Rehman",
       title:
         "Full-Stack Developer | MERN Stack Expert | Tech Mentor | Transforming Ideas into Scalable Web Applications",
-      image: "/api/placeholder/200/250",
+      image: "/images/courses/Ubaib1.png",
       bio: "Ubaid is a skilled Full-Stack Web Developer with deep expertise in the MERN Stack (MongoDB, Express.js, React, Node.js). With hands-on experience in building dynamic and scalable web applications, he helps students and professionals master modern web development tools and techniques.Currently mentoring developers and leading tech initiatives, Ubaid specializes in turning complex technical concepts into simple, practical lessons. He has trained over 100 aspiring developers and working professionals across various industries, empowering them with the skills needed to thrive in today’s digital world.",
       experience:
         "Known for his project-based teaching style, Ubaid delivers real-world training that focuses on practical implementation, helping learners build portfolio-ready projects and industry-relevant expertise.",
-      subtitle: "MERN Stack Development",
-      badges: [
-        { text: "Full Stack Development", icon: Users, color: "green" },
-        { text: "MERN Stack", color: "blue" },
-      ],
+      // subtitle: "MERN Stack Development",
+      // badges: [
+      //   { text: "Full Stack Development", icon: Users, color: "green" },
+      //   { text: "MERN Stack", color: "blue" },
+      // ],
     },
     modules: [
       {

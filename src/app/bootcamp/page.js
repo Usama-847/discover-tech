@@ -4,6 +4,7 @@ import { Clock, Calendar, Users, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import HeroSection from "@/components/Homepage/HeroSection";
+import Image from "next/image";
 
 const CourseCardsGrid = () => {
   const router = useRouter();
@@ -23,24 +24,24 @@ const CourseCardsGrid = () => {
   };
 
   const courses = [
-    {
-      id: 1,
-      title: "DATA ENGINEER",
-      instructor: "AMIR JABBAR",
-      instructorImage: "/api/placeholder/120/120",
-      duration: "Duration: 3 Months",
-      days: "Days: Wed,Thur",
-      mode: "Mode: Online & Interactive",
-      starting: "Starting: 16-June-2025",
-      price: "PKR 40,000",
-      category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
-    },
+    // {
+    //   id: 1,
+    //   title: "DATA ENGINEER",
+    //   instructor: "AMIR JABBAR",
+    //   instructorImage: "/images/members/Amir.png",
+    //   duration: "Duration: 3 Months",
+    //   days: "Days: Wed,Thur",
+    //   mode: "Mode: Online & Interactive",
+    //   starting: "Starting: 16-June-2025",
+    //   price: "PKR 40,000",
+    //   category: "BECOME A CERTIFIED",
+    //   gradient: "from-blue-500 to-green-500",
+    // },
     {
       id: 2,
       title: "MERN STACK DEVELOPMENT",
       instructor: "MUHAMMAD UBAID UR REHMAN",
-      instructorImage: "/api/placeholder/120/120",
+      instructorImage: "/images/members/Ubaid.png",
       duration: "Duration: 3 Months",
       days: "Days: Tues,Thurs,Sat",
       mode: "Mode: Online & Interactive",
@@ -53,7 +54,7 @@ const CourseCardsGrid = () => {
       id: 3,
       title: "MOBILE APP DEVELOPER (REACT NATIVE)",
       instructor: "KHURRAM SHAHID",
-      instructorImage: "/api/placeholder/120/120",
+      instructorImage: "/images/members/KHurram.png", // Updated different image path
       duration: "Duration: 3 Months",
       days: "Days: Mon,Wed,Fri",
       mode: "Mode: Online & Interactive",
@@ -66,7 +67,7 @@ const CourseCardsGrid = () => {
       id: 4,
       title: "DATA ANALYTICS",
       instructor: "AMIR JABBAR",
-      instructorImage: "/api/placeholder/120/120",
+      instructorImage: "/images/members/Amir.png",
       duration: "Duration: 3 Months",
       days: "Days: Mon,Tue",
       mode: "Mode: Online & Interactive",
@@ -79,7 +80,7 @@ const CourseCardsGrid = () => {
       id: 5,
       title: "BUSINESS ANALYTICS",
       instructor: "AMIR JABBAR",
-      instructorImage: "/api/placeholder/120/120",
+      instructorImage: "/images/members/Amir.png",
       duration: "Duration: 3 Months",
       days: "Days: Thurs,Fri",
       mode: "Mode: Online & Interactive",
@@ -92,7 +93,7 @@ const CourseCardsGrid = () => {
       id: 6,
       title: "WEB DESIGN & DEVELOPMENT",
       instructor: "MUHAMMAD UBAID UR REHMAN",
-      instructorImage: "/api/placeholder/120/120",
+      instructorImage: "/images/members/Ubaid.png",
       duration: "Duration: 5 Months",
       days: "Days: Tues,Thurs,Sat",
       mode: "Mode: Online & Interactive",
@@ -104,8 +105,8 @@ const CourseCardsGrid = () => {
     {
       id: 7,
       title: "BUSINESS DEVELOPMENT",
-      instructor: "KHURRAM SHAHID",
-      instructorImage: "/api/placeholder/120/120",
+      instructor: "AMIR JABBAR",
+      instructorImage: "/images/members/Amir.png",
       duration: "Duration: 1 Months",
       days: "Days: Thu,Fri",
       mode: "Mode: Online & Interactive",
@@ -118,7 +119,7 @@ const CourseCardsGrid = () => {
       id: 8,
       title: "DIGITAL MARKETING",
       instructor: "FARAZ KHAN",
-      instructorImage: "/api/placeholder/120/120",
+      instructorImage: "/images/members/Faraz.png", // Updated different image path
       duration: "Duration: 3 Months",
       days: "Days: Mon,Wed",
       mode: "Mode: Online & Interactive",
@@ -131,7 +132,7 @@ const CourseCardsGrid = () => {
       id: 9,
       title: "CYBER SECURITY EXPERT",
       instructor: "KHURRAM SHAHID",
-      instructorImage: "/api/placeholder/120/120",
+      instructorImage: "/images/members/Khurram.png", // Updated different image path
       duration: "Duration: 3 Months",
       days: "Days: Mon,Wed,Fri",
       mode: "Mode: Online & Interactive",
@@ -144,7 +145,7 @@ const CourseCardsGrid = () => {
       id: 11,
       title: "AIRLINE RESERVATION",
       instructor: "M S KHAN YOUSAFZAI",
-      instructorImage: "/api/placeholder/120/120",
+      instructorImage: "/images/members/Mskhanyousaf.jpg",
       duration: "Duration: 2 Months",
       days: "Days: Mon,Fri",
       mode: "Mode: Online & Interactive",
@@ -269,7 +270,22 @@ const CourseCardsGrid = () => {
                       transition={{ delay: index * 0.1 + 0.4 }}
                     >
                       <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center overflow-hidden">
-                        <div className="w-full h-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold text-sm">
+                        <Image
+                          src={course.instructorImage}
+                          alt={course.instructor}
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-cover rounded-full"
+                          onError={(e) => {
+                            // Fallback to initials if image fails to load
+                            e.target.style.display = "none";
+                            e.target.nextSibling.style.display = "flex";
+                          }}
+                        />
+                        <div
+                          className="w-full h-full bg-gray-300 bg-opacity-50 flex items-center justify-center text-white font-bold text-sm rounded-full hidden"
+                          style={{ display: "none" }}
+                        >
                           {course.instructor
                             .split(" ")
                             .map((name) => name[0])
