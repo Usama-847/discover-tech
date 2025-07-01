@@ -184,7 +184,11 @@ const Navbar = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <Image
+<<<<<<< Updated upstream
                     src="/images/logo/D.jpg"
+=======
+                    src="/images/logo/logo.png"
+>>>>>>> Stashed changes
                     width={50}
                     height={50}
                     alt="logo"
