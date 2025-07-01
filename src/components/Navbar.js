@@ -92,7 +92,6 @@ const Navbar = () => {
   // Animation properties based on device size
   const getNavAnimationProps = () => {
     if (isLargeDevice) {
-      // Large devices: full animation with width reduction
       return {
         width: isScrolled ? "75%" : "100%",
         borderRadius: isScrolled ? "50px" : "0px",
@@ -101,7 +100,6 @@ const Navbar = () => {
         marginTop: isScrolled ? "10px" : "0px",
       };
     } else {
-      // Small devices: keep 100% width, only change top margin
       return {
         width: "100%",
         borderRadius: "0px",
@@ -180,12 +178,17 @@ const Navbar = () => {
             >
               <Link href="/" className="flex items-center">
                 <motion.div
-                  className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center mr-3 shadow-lg"
+                  className="w-10 h-10  rounded-lg flex items-center justify-center mr-3 shadow-lg"
                   style={{ rotate: logoRotation }}
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <span className="text-white font-bold text-xl">D</span>
+                  <Image
+                    src="/images/logo/D.jpg"
+                    width={50}
+                    height={50}
+                    alt="logo"
+                  />
                 </motion.div>
                 <motion.span
                   className="text-gray-800 text-xl font-semibold"

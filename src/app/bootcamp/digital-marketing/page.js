@@ -16,15 +16,15 @@ const DigitalMarketing = () => {
       name: "Faraz Khan",
       title:
         "Digital Marketing Strategist | Growth Consultant | Industry Trainer | Helping Brands Scale Online",
-      image: "/api/placeholder/200/250",
+      image: "/images/courses/Faraz.png",
       bio: "Faraz Khan is a seasoned Digital Marketing expert with over a decade of experience in driving online growth for startups and enterprise brands. Currently consulting at leading digital firms, he specializes in creating high-conversion marketing funnels, SEO, paid ads, and brand visibility strategies.",
       experience:
         "He has successfully trained and mentored 100+ professionals and business owners from companies like Daraz, Nestlé, Telenor, Jazz, and Ufone—equipping them with actionable digital skills for the modern market. Known for his results-driven approach and practical teaching methods, Faraz ensures every learner walks away ready to implement real-world strategies with confidence.",
 
-      badges: [
-        { text: "Digital Marketing Expert", icon: Users, color: "green" },
-        { text: "Targted Ads", color: "blue" },
-      ],
+      // badges: [
+      //   { text: "Digital Marketing Expert", icon: Users, color: "green" },
+      //   { text: "Targted Ads", color: "blue" },
+      // ],
     },
     modules: [
       {
