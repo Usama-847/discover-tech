@@ -27,6 +27,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Solution", path: "/solution" },
+    { name: "Our Products", path: "/products" },
   ];
 
   const bootcampOptions = [
@@ -89,7 +90,6 @@ const Navbar = () => {
     return pathname.startsWith("/bootcamp");
   };
 
-  // Animation properties based on device size
   const getNavAnimationProps = () => {
     if (isLargeDevice) {
       return {
@@ -178,16 +178,17 @@ const Navbar = () => {
             >
               <Link href="/" className="flex items-center">
                 <motion.div
-                  className="w-10 h-10  rounded-lg flex items-center justify-center mr-3 shadow-lg"
+                  className="w-10 h-10 rounded-lg flex items-center justify-center mr-3 shadow-lg"
                   style={{ rotate: logoRotation }}
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <Image
-                    src="/images/logo/D.jpg"
+                    src="/images/logo/LOGO.png"
                     width={50}
                     height={50}
                     alt="logo"
+                    className="object-cover"
                   />
                 </motion.div>
                 <motion.span
