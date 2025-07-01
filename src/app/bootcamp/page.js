@@ -119,7 +119,7 @@ const CourseCardsGrid = () => {
       id: 8,
       title: "DIGITAL MARKETING",
       instructor: "FARAZ KHAN",
-      instructorImage: "/images/members/Faraz.png", // Updated different image path
+      instructorImage: "/images/members/Faraz.png", 
       duration: "Duration: 3 Months",
       days: "Days: Mon,Wed",
       mode: "Mode: Online & Interactive",
