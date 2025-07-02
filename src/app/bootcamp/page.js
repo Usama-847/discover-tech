@@ -35,7 +35,7 @@ const CourseCardsGrid = () => {
     //   starting: "Starting: 16-June-2025",
     //   price: "PKR 40,000",
     //   category: "BECOME A CERTIFIED",
-    //   gradient: "from-blue-500 to-green-500",
+    //   gradient: "from-gray-800 to-black",
     // },
     {
       id: 2,
@@ -48,7 +48,7 @@ const CourseCardsGrid = () => {
       starting: "Starting: 16-June-2025",
       price: "PKR 40,000",
       category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
+      gradient: "from-gray-800 to-black",
     },
     {
       id: 3,
@@ -61,7 +61,7 @@ const CourseCardsGrid = () => {
       starting: "Starting: 16-June-2025",
       price: "PKR 40,000",
       category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
+      gradient: "from-black to-gray-800",
     },
     {
       id: 4,
@@ -74,7 +74,7 @@ const CourseCardsGrid = () => {
       starting: "Starting: 16-June-2025",
       price: "PKR 40,000",
       category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
+      gradient: "from-gray-700 to-gray-900",
     },
     {
       id: 5,
@@ -87,7 +87,7 @@ const CourseCardsGrid = () => {
       starting: "Starting: 16-June-2025",
       price: "PKR 40,000",
       category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
+      gradient: "from-gray-800 to-black",
     },
     {
       id: 6,
@@ -100,7 +100,7 @@ const CourseCardsGrid = () => {
       starting: "Starting: 16-June-2025",
       price: "PKR 40,000",
       category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
+      gradient: "from-black to-gray-700",
     },
     {
       id: 7,
@@ -113,20 +113,20 @@ const CourseCardsGrid = () => {
       starting: "Starting: 16-June-2025",
       price: "PKR 20,000",
       category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
+      gradient: "from-gray-800 to-black",
     },
     {
       id: 8,
       title: "DIGITAL MARKETING",
       instructor: "FARAZ KHAN",
-      instructorImage: "/images/members/Faraz.png", 
+      instructorImage: "/images/members/Faraz.png",
       duration: "Duration: 3 Months",
       days: "Days: Mon,Wed",
       mode: "Mode: Online & Interactive",
       starting: "Starting: 16-June-2025",
       price: "PKR 40,000",
       category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
+      gradient: "from-gray-700 to-gray-900",
     },
     {
       id: 9,
@@ -139,7 +139,7 @@ const CourseCardsGrid = () => {
       starting: "Starting: 16-June-2025",
       price: "PKR 40,000",
       category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
+      gradient: "from-black to-gray-800",
     },
     {
       id: 11,
@@ -152,7 +152,7 @@ const CourseCardsGrid = () => {
       starting: "Starting: 16-June-2025",
       price: "PKR 25,000",
       category: "BECOME A CERTIFIED",
-      gradient: "from-blue-500 to-green-500",
+      gradient: "from-gray-800 to-black",
     },
   ];
 
@@ -200,7 +200,7 @@ const CourseCardsGrid = () => {
       <HeroSection onStartJourney={handleStartJourney} />
       <div
         ref={coursesRef}
-        className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 relative bottom-32"
+        className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 relative bottom-32"
       >
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -235,7 +235,7 @@ const CourseCardsGrid = () => {
                   scale: 1.02,
                   transition: { duration: 0.3 },
                 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-200"
               >
                 {/* Course Header with Gradient */}
                 <div
@@ -246,7 +246,7 @@ const CourseCardsGrid = () => {
 
                   <div className="relative z-10">
                     <motion.p
-                      className="text-sm font-medium opacity-90 mb-2"
+                      className="text-sm font-medium opacity-90 mb-2 text-gray-200"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 + 0.2 }}
@@ -269,7 +269,7 @@ const CourseCardsGrid = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: index * 0.1 + 0.4 }}
                     >
-                      <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center overflow-hidden">
+                      <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center overflow-hidden border-2 border-gray-400">
                         <Image
                           src={course.instructorImage}
                           alt={course.instructor}
@@ -283,7 +283,7 @@ const CourseCardsGrid = () => {
                           }}
                         />
                         <div
-                          className="w-full h-full bg-gray-300 bg-opacity-50 flex items-center justify-center text-white font-bold text-sm rounded-full hidden"
+                          className="w-full h-full bg-gray-500 bg-opacity-50 flex items-center justify-center text-white font-bold text-sm rounded-full hidden"
                           style={{ display: "none" }}
                         >
                           {course.instructor
@@ -296,7 +296,9 @@ const CourseCardsGrid = () => {
                         <p className="font-semibold text-sm">
                           {course.instructor}
                         </p>
-                        <p className="text-xs opacity-80">Course Instructor</p>
+                        <p className="text-xs opacity-80 text-gray-300">
+                          Course Instructor
+                        </p>
                       </div>
                     </motion.div>
                   </div>
@@ -311,7 +313,7 @@ const CourseCardsGrid = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 + 0.5 }}
                     >
-                      <Clock className="w-4 h-4 mr-2 text-blue-500" />
+                      <Clock className="w-4 h-4 mr-2 text-gray-700" />
                       <span className="text-sm">{course.duration}</span>
                     </motion.div>
 
@@ -321,7 +323,7 @@ const CourseCardsGrid = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 + 0.6 }}
                     >
-                      <Calendar className="w-4 h-4 mr-2 text-green-500" />
+                      <Calendar className="w-4 h-4 mr-2 text-gray-800" />
                       <span className="text-sm">{course.days}</span>
                     </motion.div>
 
@@ -331,7 +333,7 @@ const CourseCardsGrid = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 + 0.7 }}
                     >
-                      <Users className="w-4 h-4 mr-2 text-purple-500" />
+                      <Users className="w-4 h-4 mr-2 text-gray-600" />
                       <span className="text-sm">{course.mode}</span>
                     </motion.div>
 
@@ -341,7 +343,7 @@ const CourseCardsGrid = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 + 0.8 }}
                     >
-                      <CheckCircle className="w-4 h-4 mr-2 text-orange-500" />
+                      <CheckCircle className="w-4 h-4 mr-2 text-gray-500" />
                       <span className="text-sm">{course.starting}</span>
                     </motion.div>
                   </div>
@@ -357,7 +359,7 @@ const CourseCardsGrid = () => {
                       {course.price}
                     </div>
                     <motion.button
-                      className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 cursor-pointer"
+                      className="bg-gradient-to-r from-gray-800 to-black text-white px-6 py-2 rounded-full font-semibold hover:from-black hover:to-gray-900 transition-all duration-200 cursor-pointer border border-gray-600"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => handleEnrollClick(course.title)}
