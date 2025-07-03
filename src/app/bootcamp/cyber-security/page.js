@@ -163,16 +163,42 @@ const Cybersecurity = () => {
       },
     ],
     tools: [
-      { name: "Python", icon: Code },
-      { name: "SQL", icon: Code },
-      { name: "Apache Airflow", icon: Monitor },
-      { name: "Apache Kafka", icon: Monitor },
-      { name: "Tableau", icon: Monitor },
-      { name: "AWS", icon: Monitor },
-      { name: "PySpark", icon: Code },
-      { name: "MySQL", icon: Monitor },
-      { name: "Talend", icon: Monitor },
+      // Module 2: Networking Fundamentals
+      { name: "Wireshark", icon: Monitor },
+      { name: "Cisco Packet Tracer", icon: Monitor },
+      { name: "Nmap", icon: Monitor },
+
+      // Module 3: Operating Systems & System Security
+      { name: "Linux (Kali, Ubuntu)", icon: Monitor },
+      { name: "Windows Defender", icon: Monitor },
+      { name: "SELinux/AppArmor", icon: Monitor },
+
+      // Module 4: Cryptography
+      { name: "OpenSSL", icon: Code },
+      { name: "GnuPG", icon: Code },
+
+      // Module 5: Web & Application Security
+      { name: "OWASP ZAP", icon: Monitor },
+      { name: "Burp Suite", icon: Monitor },
+
+      // Module 6: Network Security & Monitoring
+      { name: "Snort", icon: Monitor },
+      { name: "Suricata", icon: Monitor },
+      { name: "Splunk", icon: Monitor },
+
+      // Module 7: Ethical Hacking & Penetration Testing
+      { name: "Kali Linux", icon: Monitor },
+      { name: "Metasploit", icon: Code },
+      { name: "Hydra", icon: Code },
+      { name: "John the Ripper", icon: Code },
+
+      // Module 8: Compliance & Risk Management
+      { name: "NIST Cybersecurity Framework", icon: Monitor },
+      { name: "ISO 27001 Toolkit", icon: Monitor },
+
+      // General Purpose
       { name: "Git", icon: Code },
+      { name: "Python", icon: Code },
     ],
     heroMessage:
       "Start your journey to a global career in Cyber Security! Gain hands-on skills and become an industry-ready professional",

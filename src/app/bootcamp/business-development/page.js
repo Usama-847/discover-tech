@@ -163,16 +163,43 @@ const BusinessDevelopment = () => {
       },
     ],
     tools: [
-      { name: "Python", icon: Code },
-      { name: "SQL", icon: Code },
-      { name: "Apache Airflow", icon: Monitor },
-      { name: "Apache Kafka", icon: Monitor },
-      { name: "Tableau", icon: Monitor },
-      { name: "AWS", icon: Monitor },
-      { name: "PySpark", icon: Code },
-      { name: "MySQL", icon: Monitor },
-      { name: "Talend", icon: Monitor },
-      { name: "Git", icon: Code },
+      // Module 2: Market Research & Industry Analysis
+      { name: "Google Trends", icon: Monitor },
+      { name: "Statista", icon: Monitor },
+      { name: "SimilarWeb", icon: Monitor },
+
+      // Module 3: Lead Generation & Prospecting
+      { name: "LinkedIn Sales Navigator", icon: Monitor },
+      { name: "Apollo.io", icon: Monitor },
+      { name: "Hunter.io", icon: Monitor },
+
+      // Module 4: Sales Strategy & Relationship Management
+      { name: "Pipedrive", icon: Monitor },
+      { name: "Zoho CRM", icon: Monitor },
+
+      // Module 5: Strategic Partnerships
+      { name: "DocuSign", icon: Monitor },
+      { name: "PandaDoc", icon: Monitor },
+
+      // Module 6: Communication & Pitching
+      { name: "Canva", icon: Monitor },
+      { name: "Google Slides / PowerPoint", icon: Monitor },
+
+      // Module 7: Financial Acumen
+      { name: "Microsoft Excel", icon: Monitor },
+      { name: "Google Sheets", icon: Monitor },
+
+      // Module 8: Digital Tools & CRM
+      { name: "HubSpot CRM", icon: Monitor },
+      { name: "Salesforce", icon: Monitor },
+      { name: "Mailchimp", icon: Monitor },
+      { name: "Zapier", icon: Monitor },
+
+      // General (used across multiple modules)
+      { name: "Google Workspace", icon: Monitor },
+      { name: "Trello / Notion", icon: Monitor },
+      { name: "Slack", icon: Monitor },
+      { name: "GitHub (for collaboration)", icon: Code },
     ],
     heroMessage:
       "Start your journey to a global career in Data Engineering! Gain hands-on skills and become an industry-ready professional",

@@ -163,16 +163,39 @@ const DigitalMarketing = () => {
       },
     ],
     tools: [
-      { name: "Python", icon: Code },
-      { name: "SQL", icon: Code },
-      { name: "Apache Airflow", icon: Monitor },
-      { name: "Apache Kafka", icon: Monitor },
-      { name: "Tableau", icon: Monitor },
-      { name: "AWS", icon: Monitor },
-      { name: "PySpark", icon: Code },
-      { name: "MySQL", icon: Monitor },
-      { name: "Talend", icon: Monitor },
-      { name: "Git", icon: Code },
+      // Module 2: Website Planning & WordPress
+      { name: "WordPress", icon: Monitor },
+      { name: "Elementor", icon: Monitor },
+
+      // Module 3: SEO
+      { name: "Google Search Console", icon: Monitor },
+      { name: "SEMrush", icon: Monitor },
+      { name: "Ahrefs", icon: Monitor },
+
+      // Module 4: SEM
+      { name: "Google Ads", icon: Monitor },
+      { name: "Google Tag Manager", icon: Monitor },
+
+      // Module 5: SMM
+      { name: "Meta Ads Manager", icon: Monitor },
+      { name: "LinkedIn Ads", icon: Monitor },
+      { name: "Hootsuite", icon: Monitor },
+
+      // Module 6: Content Marketing
+      { name: "Canva", icon: Monitor },
+      { name: "Grammarly", icon: Monitor },
+
+      // Module 7: Email Marketing
+      { name: "Mailchimp", icon: Monitor },
+      { name: "ConvertKit", icon: Monitor },
+
+      // Module 8: Web Analytics
+      { name: "Google Analytics", icon: Monitor },
+      { name: "Hotjar", icon: Monitor },
+
+      // General Productivity / Tracking
+      { name: "Notion", icon: Monitor },
+      { name: "Google Sheets", icon: Monitor },
     ],
     heroMessage:
       "Start your journey to a global career in Digital Marketing! Gain hands-on skills and become an industry-ready professional",
