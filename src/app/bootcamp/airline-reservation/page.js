@@ -163,16 +163,53 @@ const AirlineReservation = () => {
       },
     ],
     tools: [
-      { name: "Python", icon: Code },
-      { name: "SQL", icon: Code },
-      { name: "Apache Airflow", icon: Monitor },
-      { name: "Apache Kafka", icon: Monitor },
-      { name: "Tableau", icon: Monitor },
-      { name: "AWS", icon: Monitor },
-      { name: "PySpark", icon: Code },
+      // Module 1: Introduction to Airline Reservation Systems
+      { name: "Draw.io (System Diagrams)", icon: Monitor },
+      { name: "Lucidchart", icon: Monitor },
+
+      // Module 2: Database Design & Management
       { name: "MySQL", icon: Monitor },
-      { name: "Talend", icon: Monitor },
-      { name: "Git", icon: Code },
+      { name: "PostgreSQL", icon: Monitor },
+      { name: "DB Designer", icon: Monitor },
+      { name: "phpMyAdmin", icon: Monitor },
+
+      // Module 3: Frontend Development
+      { name: "HTML5", icon: Code },
+      { name: "CSS3", icon: Code },
+      { name: "JavaScript", icon: Code },
+      { name: "React.js", icon: Monitor },
+      { name: "Bootstrap / Tailwind CSS", icon: Code },
+      { name: "Figma", icon: Monitor },
+
+      // Module 4: Backend Development
+      { name: "Node.js", icon: Code },
+      { name: "Express.js", icon: Code },
+      { name: "Django / Flask", icon: Code },
+
+      // Module 5: Flight Search & Booking Logic
+      { name: "Postman (API Testing)", icon: Monitor },
+      { name: "MongoDB / MySQL", icon: Monitor },
+
+      // Module 6: Payment Gateway Integration
+      { name: "Stripe", icon: Monitor },
+      { name: "PayPal", icon: Monitor },
+      { name: "SSL", icon: Monitor },
+      { name: "JWT / OAuth", icon: Code },
+
+      // Module 7: Admin Panel & Airline Management
+      { name: "React Admin", icon: Monitor },
+      { name: "Chart.js / Recharts", icon: Code },
+
+      // Module 8: Deployment & Cloud Hosting
+      { name: "Docker", icon: Monitor },
+      { name: "GitHub Actions", icon: Monitor },
+      { name: "AWS", icon: Monitor },
+      { name: "Firebase", icon: Monitor },
+      { name: "Git & GitHub", icon: Code },
+
+      // Module 9: Final Project & Case Study
+      { name: "VS Code", icon: Monitor },
+      { name: "Markdown (Docs)", icon: Code },
     ],
     heroMessage:
       "Start your journey to a global career in Data Engineering! Gain hands-on skills and become an industry-ready professional",

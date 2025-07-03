@@ -163,16 +163,43 @@ const BusinessAnalytics = () => {
       },
     ],
     tools: [
-      { name: "Python", icon: Code },
-      { name: "SQL", icon: Code },
-      { name: "Apache Airflow", icon: Monitor },
-      { name: "Apache Kafka", icon: Monitor },
-      { name: "Tableau", icon: Monitor },
-      { name: "AWS", icon: Monitor },
-      { name: "PySpark", icon: Code },
+      // Module 1: Introduction to Business Analytics
+      { name: "Draw.io / Lucidchart", icon: Monitor },
+
+      // Module 2: Fundamentals of Data & Statistics
+      { name: "Microsoft Excel", icon: Monitor },
+      { name: "Python (for statistics)", icon: Code },
+
+      // Module 3: Excel for Business Analytics
+      { name: "Microsoft Excel", icon: Monitor },
+      { name: "Google Sheets", icon: Monitor },
+
+      // Module 4: SQL for Data Extraction
       { name: "MySQL", icon: Monitor },
-      { name: "Talend", icon: Monitor },
+      { name: "PostgreSQL", icon: Monitor },
+      { name: "SQL Server", icon: Monitor },
+
+      // Module 5: Data Visualization & BI Tools
+      { name: "Power BI", icon: Monitor },
+      { name: "Tableau", icon: Monitor },
+      { name: "Looker Studio (Optional)", icon: Monitor },
+
+      // Module 6: Business Metrics & KPIs
+      { name: "Power BI", icon: Monitor },
+      { name: "Excel Dashboards", icon: Monitor },
+
+      // Module 7: Introduction to Predictive Analytics
+      { name: "Python", icon: Code },
+      { name: "scikit-learn", icon: Code },
+      { name: "Jupyter Notebooks", icon: Monitor },
+
+      // Module 8: Case Studies & Domain Applications
+      { name: "Industry Data Sets (Kaggle/UCI)", icon: Monitor },
+
+      // Module 9: Capstone Project & Career Prep
       { name: "Git", icon: Code },
+      { name: "GitHub", icon: Code },
+      { name: "PowerPoint / Canva (Presentation)", icon: Monitor },
     ],
     heroMessage:
       "Start your journey to a global career in Data Engineering! Gain hands-on skills and become an industry-ready professional",

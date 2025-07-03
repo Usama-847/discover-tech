@@ -32,7 +32,7 @@ const Navbar = () => {
 
   const bootcampOptions = [
     { name: "All Bootcamps", path: "/bootcamp" },
-    { name: "Web Development", path: "/bootcamp/web-development" },
+    { name: "Data Engineering", path: "/bootcamp/data-engineering" },
     { name: "Digital Marketing", path: "/bootcamp/digital-marketing" },
     { name: "Airline Reservation", path: "/bootcamp/airline-reservation" },
     { name: "Data Analytics Bootcamp", path: "/bootcamp/data-analytics" },

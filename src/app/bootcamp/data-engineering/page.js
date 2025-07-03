@@ -16,15 +16,15 @@ const DataEngineering = () => {
       name: "AMIR JABBAR",
       title:
         "Data Top Voice | Business Analyst @Engro Group | Keynote Speaker | Solving Business Problems with Data Analytics",
-      image: "/api/placeholder/200/250",
+      image: "/images/courses/Amir Bhai-001.png",
       bio: "Amir is a globally experienced Business Data Analyst, currently serving in the Business Strategy & Development department at Quasico Inc. He empowers organizations with data-driven insights and innovative solutions. With a strong track record in multinational companies, he has driven transformations through analytical techniques such as predictive modeling, statistical analysis, and data visualization.",
       experience:
         "Amir has trained over 100 professionals from top organizations like GSK, HBL, P&G, Marico, Easyss, UNCP, and Citi Bank, helping them acquire future-ready skills. Known for his interactive and hands-on teaching style, he delivers industry-relevant training that ensures practical and impactful learning.",
-      subtitle: "Senior Data Engineer",
-      badges: [
-        { text: "Data Consultant", icon: Users, color: "green" },
-        { text: "Big Data Analytics Expert", color: "blue" },
-      ],
+      // subtitle: "Senior Data Engineer",
+      // badges: [
+      //   { text: "Data Consultant", icon: Users, color: "green" },
+      //   { text: "Big Data Analytics Expert", color: "blue" },
+      // ],
     },
     modules: [
       {
