@@ -2,7 +2,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="relative min-h-screen flex items-end justify-start overflow-hidden">
+    <div className="relative min-h-screen flex items-end justify-start overflow-hidden bg-[#f8f6f6]">
       {/* Background Video */}
       <video
         autoPlay
@@ -21,7 +21,7 @@ function Hero() {
       <div className="absolute inset-0 bg-[#ffffff37] bg-opacity-20 z-10"></div>
 
       {/* Content */}
-      <div className="absolute bottom-24 left-1.5 md:left-6 z-20 max-w-4xl px-4 sm:px-6">
+      <div className="absolute bottom-24 left-1.5 md:left-6 z-[9999] max-w-4xl px-4 sm:px-6">
         <h2 className="text-4xl lg:text-6xl font-bold text-gray-700 leading-tight mb-6">
           About Us
         </h2>

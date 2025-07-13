@@ -56,7 +56,7 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
-      setIsLargeDevice(window.innerWidth >= 1024); // lg breakpoint
+      setIsLargeDevice(window.innerWidth >= 1024);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -90,266 +90,407 @@ const Navbar = () => {
     return pathname.startsWith("/bootcamp");
   };
 
-  const getNavAnimationProps = () => {
-    if (isLargeDevice) {
-      return {
-        width: isScrolled ? "75%" : "100%",
-        borderRadius: isScrolled ? "50px" : "0px",
-        marginLeft: isScrolled ? "12.5%" : "0%",
-        marginRight: isScrolled ? "12.5%" : "0%",
-        marginTop: isScrolled ? "10px" : "0px",
-      };
-    } else {
-      return {
-        width: "100%",
-        borderRadius: "0px",
-        marginLeft: "0%",
-        marginRight: "0%",
-        marginTop: isScrolled ? "10px" : "0px",
-      };
-    }
-  };
-
-  const getLogoContainerAnimation = () => {
-    if (isLargeDevice) {
-      // Large devices: move logo closer to center
-      return {
-        marginRight: isScrolled ? "40px" : "0px",
-        transform: isScrolled ? "translateX(80px)" : "translateX(0px)",
-      };
-    } else {
-      // Small devices: no position change
-      return {
-        marginRight: "0px",
-        transform: "translateX(0px)",
-      };
-    }
-  };
-
-  const getContactButtonAnimation = () => {
-    if (isLargeDevice) {
-      // Large devices: move contact button
-      return {
-        transform: isScrolled ? "translateX(-80px)" : "translateX(0px)",
-        marginLeft: isScrolled ? "-40px" : "0px",
-      };
-    } else {
-      // Small devices: no position change
-      return {
-        transform: "translateX(0px)",
-        marginLeft: "0px",
-      };
-    }
-  };
+  const getBackgroundStyle = () => ({
+    background: isScrolled
+      ? "rgba(255, 255, 255, 0.15)"
+      : "rgba(255, 255, 255, 0.9)",
+    backdropFilter: isScrolled ? "blur(20px)" : "blur(0px)",
+    WebkitBackdropFilter: isScrolled ? "blur(20px)" : "blur(0px)",
+  });
 
   return (
     <>
-      <motion.nav
-        initial={{ y: 0 }}
-        animate={getNavAnimationProps()}
-        transition={{
-          duration: 0.4,
-          ease: "easeInOut",
-        }}
-        className="fixed top-0 left-0 right-0 z-[999] backdrop-blur-xl border border-white/30"
-        style={{
-          background: isScrolled
-            ? "rgba(255, 255, 255, 0.15)"
-            : "rgba(255, 255, 255, 0.9)",
-          backdropFilter: isScrolled ? "blur(20px)" : "blur(0px)",
-          WebkitBackdropFilter: isScrolled ? "blur(20px)" : "blur(0px)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="flex justify-between items-center"
-            animate={{
-              height: isScrolled ? "72px" : "64px",
-              paddingTop: isScrolled ? "8px" : "0px",
-              paddingBottom: isScrolled ? "8px" : "0px",
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            {/* Logo - position changes only on large devices */}
+      {/* Main Navigation Container */}
+      <div className="fixed top-0 left-0 right-0 z-[999] pointer-events-none">
+        <motion.div
+          className="relative w-full"
+          animate={{
+            paddingTop: isScrolled ? "25px" : "0px",
+          }}
+          transition={{
+            duration: 0.4,
+            ease: "easeInOut",
+          }}
+        >
+          {/* Logo Section - Non-scrolled state */}
+          {!isScrolled && (
             <motion.div
-              className="flex-shrink-0"
-              animate={getLogoContainerAnimation()}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="absolute top-3 left-0 pointer-events-auto"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: !isScrolled ? 1 : 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
             >
-              <Link href="/" className="flex items-center">
-                <motion.div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center mr-3 shadow-lg"
-                  style={{ rotate: logoRotation }}
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Image
-                    src="/images/logo/logo.png"
-                    width={50}
-                    height={50}
-                    alt="logo"
-                    className="object-cover"
-                  />
-                </motion.div>
-                <motion.span
-                  className="text-gray-800 text-xl font-semibold"
-                  animate={{
-                    fontSize: isScrolled ? "1.125rem" : "1.25rem",
-                    opacity: isScrolled ? 0.9 : 1,
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  DiscoverTech
-                </motion.span>
-              </Link>
-            </motion.div>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-center space-x-8">
-                {navLinks.map((link, index) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Link
-                      href={link.path}
-                      className={`text-sm font-medium transition-all duration-300 relative group ${
-                        isActive(link.path)
-                          ? "text-gray-800"
-                          : "text-gray-600 hover:text-gray-800"
-                      }`}
-                    >
-                      {link.name}
-                      <motion.div
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: isActive(link.path) ? 1 : 0 }}
-                        whileHover={{ scaleX: 1 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    </Link>
-                  </motion.div>
-                ))}
-
-                {/* Bootcamp Dropdown */}
-                <motion.div
-                  className="relative"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <button
-                    onClick={toggleBootcamp}
-                    className={`text-sm font-medium flex items-center transition-all duration-300 relative group ${
-                      isBootcampActive()
-                        ? "text-gray-800"
-                        : "text-gray-600 hover:text-gray-800"
-                    }`}
-                  >
-                    Bootcamp
-                    <motion.div
-                      animate={{ rotate: isBootcampOpen ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <ChevronDown className="ml-1 h-4 w-4" />
-                    </motion.div>
-                    <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: isBootcampActive() ? 1 : 0 }}
-                      whileHover={{ scaleX: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </button>
-
-                  <AnimatePresence>
-                    {isBootcampOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute left-0 mt-2 w-64 bg-gray-300 backdrop-blur-md rounded-xl shadow-2xl py-2 z-50 border border-gray-200"
-                      >
-                        {bootcampOptions.map((option, index) => (
-                          <motion.div
-                            key={option.name}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.05 }}
-                          >
-                            <Link
-                              href={option.path}
-                              className={`block px-4 py-2 text-sm transition-all duration-200 rounded-lg mx-2 ${
-                                isActive(option.path)
-                                  ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white"
-                                  : "text-gray-700 hover:bg-gray-100 hover:text-gray-800"
-                              }`}
-                              onClick={() => setIsBootcampOpen(false)}
-                            >
-                              {option.name}
-                            </Link>
-                          </motion.div>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* Right side items - Contact Us moves closer when scrolled on large devices only */}
-            <motion.div
-              className="hidden md:flex items-center space-x-4"
-              initial={{ opacity: 0, x: 10 }}
-              animate={{
-                opacity: 1,
-                x: 0,
-                ...getContactButtonAnimation(),
-              }}
-              transition={{
-                delay: 0.4,
-                duration: 0.3,
-                ease: "easeInOut",
-              }}
-            >
-              {/* Contact Us Button */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="backdrop-blur-xl border border-white/30 px-4 py-2 flex items-center justify-center"
+                style={getBackgroundStyle()}
+                animate={{
+                  borderRadius: "0px 50px 50px 0px",
+                  height: "64px",
+                  paddingTop: "8px",
+                  paddingBottom: "8px",
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
               >
-                <Link
-                  href="/contact"
-                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center shadow-lg hover:shadow-purple-500/25"
-                >
-                  Contact Us
-                  <motion.svg
-                    className="ml-2 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    whileHover={{ x: 2 }}
-                    transition={{ duration: 0.2 }}
+                <Link href="/" className="flex items-center">
+                  <motion.div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg mr-3"
+                    style={{ rotate: logoRotation }}
+                    whileHover={{ scale: 1.1 }}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
+                    <Image
+                      src="/images/logo/logo.png"
+                      width={50}
+                      height={50}
+                      alt="logo"
+                      className="object-cover"
                     />
-                  </motion.svg>
+                  </motion.div>
+                  <span className="text-gray-800 text-xl font-semibold">
+                    DiscoverTech
+                  </span>
                 </Link>
               </motion.div>
             </motion.div>
+          )}
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
+          {/* Desktop Menu Section - Non-scrolled state */}
+          {!isScrolled && (
+            <motion.div
+              className="absolute top-3 right-0 hidden md:block pointer-events-auto"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: !isScrolled ? 1 : 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <motion.div
+                className="backdrop-blur-xl border border-white/30 px-4 py-2 flex items-center justify-center"
+                style={getBackgroundStyle()}
+                animate={{
+                  borderRadius: "50px 0px 0px 50px",
+                  height: "64px",
+                  paddingTop: "8px",
+                  paddingBottom: "8px",
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <div className="flex items-center space-x-8">
+                  {navLinks.map((link, index) => (
+                    <motion.div
+                      key={link.name}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Link
+                        href={link.path}
+                        className={`text-sm transition-all duration-300 relative group ${
+                          isActive(link.path)
+                            ? "font-bold"
+                            : "font-medium text-gray-600 hover:text-gray-800"
+                        }`}
+                        style={{
+                          color: isActive(link.path) ? "#8000D7" : undefined,
+                        }}
+                      >
+                        {link.name}
+                        <motion.div
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
+                          initial={{ scaleX: 0 }}
+                          animate={{ scaleX: 0 }}
+                          whileHover={{ scaleX: !isActive(link.path) ? 1 : 0 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      </Link>
+                    </motion.div>
+                  ))}
+
+                  {/* Bootcamp Dropdown */}
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <button
+                      onClick={toggleBootcamp}
+                      className={`text-sm transition-all duration-300 relative group flex items-center ${
+                        isBootcampActive()
+                          ? "font-bold"
+                          : "font-medium text-gray-600 hover:text-gray-800"
+                      }`}
+                      style={{
+                        color: isBootcampActive() ? "#8000D7" : undefined,
+                      }}
+                    >
+                      Bootcamp
+                      <motion.div
+                        animate={{ rotate: isBootcampOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      </motion.div>
+                      <motion.div
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 0 }}
+                        whileHover={{ scaleX: !isBootcampActive() ? 1 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {isBootcampOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute left-0 mt-2 w-64 bg-gray-300 backdrop-blur-md rounded-xl shadow-2xl py-2 z-50 border border-gray-200"
+                        >
+                          {bootcampOptions.map((option, index) => (
+                            <motion.div
+                              key={option.name}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.05 }}
+                            >
+                              <Link
+                                href={option.path}
+                                className={`block px-4 py-2 text-sm transition-all duration-200 rounded-lg mx-2 ${
+                                  isActive(option.path)
+                                    ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white"
+                                    : "text-gray-700 hover:bg-gray-100 hover:text-gray-800"
+                                }`}
+                                onClick={() => setIsBootcampOpen(false)}
+                              >
+                                {option.name}
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+
+                  {/* Contact Us Button */}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link
+                      href="/contact"
+                      className="bg-[#008236] hover:bg-[#255c3c] text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center shadow-lg hover:shadow-purple-500/25"
+                    >
+                      Contact Us
+                      <motion.svg
+                        className="ml-2 h-4 w-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        whileHover={{ x: 2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </motion.svg>
+                    </Link>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+
+          {/* Scrolled State - Combined Logo and Menu */}
+          {isScrolled && isLargeDevice && (
+            <motion.div
+              className="absolute top-3 left-1/2 transform -translate-x-1/2 hidden md:block pointer-events-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isScrolled ? 1 : 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <motion.div
+                className="backdrop-blur-xl border border-white/30 px-4 py-3 flex items-center justify-center"
+                style={getBackgroundStyle()}
+                animate={{
+                  borderRadius: "50px",
+                  height: "72px",
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <div className="flex items-center space-x-8">
+                  {/* Logo in scrolled state */}
+                  <Link href="/" className="flex items-center mr-4">
+                    <motion.div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg"
+                      style={{ rotate: logoRotation }}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <Image
+                        src="/images/logo/logo.png"
+                        width={50}
+                        height={50}
+                        alt="logo"
+                        className="object-cover"
+                      />
+                    </motion.div>
+                  </Link>
+
+                  {/* Menu items */}
+                  {navLinks.map((link, index) => (
+                    <motion.div
+                      key={link.name}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Link
+                        href={link.path}
+                        className={`text-sm transition-all duration-300 relative group ${
+                          isActive(link.path)
+                            ? "font-bold"
+                            : "font-medium text-gray-600 hover:text-gray-800"
+                        }`}
+                        style={{
+                          color: isActive(link.path) ? "#8000D7" : undefined,
+                        }}
+                      >
+                        {link.name}
+                        <motion.div
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
+                          initial={{ scaleX: 0 }}
+                          animate={{ scaleX: 0 }}
+                          whileHover={{ scaleX: !isActive(link.path) ? 1 : 0 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      </Link>
+                    </motion.div>
+                  ))}
+
+                  {/* Bootcamp Dropdown */}
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <button
+                      onClick={toggleBootcamp}
+                      className={`text-sm transition-all duration-300 relative group flex items-center ${
+                        isBootcampActive()
+                          ? "font-bold"
+                          : "font-medium text-gray-600 hover:text-gray-800"
+                      }`}
+                      style={{
+                        color: isBootcampActive() ? "#8000D7" : undefined,
+                      }}
+                    >
+                      Bootcamp
+                      <motion.div
+                        animate={{ rotate: isBootcampOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      </motion.div>
+                      <motion.div
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 0 }}
+                        whileHover={{ scaleX: !isBootcampActive() ? 1 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {isBootcampOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute left-0 mt-2 w-64 bg-gray-300 backdrop-blur-md rounded-xl shadow-2xl py-2 z-50 border border-gray-200"
+                        >
+                          {bootcampOptions.map((option, index) => (
+                            <motion.div
+                              key={option.name}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.05 }}
+                            >
+                              <Link
+                                href={option.path}
+                                className={`block px-4 py-2 text-sm transition-all duration-200 rounded-lg mx-2 ${
+                                  isActive(option.path)
+                                    ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white"
+                                    : "text-gray-700 hover:bg-gray-100 hover:text-gray-800"
+                                }`}
+                                onClick={() => setIsBootcampOpen(false)}
+                              >
+                                {option.name}
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+
+                  {/* Contact Us Button */}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link
+                      href="/contact"
+                      className="bg-[#008236] hover:bg-[#255c3c] text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center shadow-lg hover:shadow-purple-500/25"
+                    >
+                      Contact Us
+                      <motion.svg
+                        className="ml-2 h-4 w-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        whileHover={{ x: 2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </motion.svg>
+                    </Link>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+
+          {/* Mobile Menu Button */}
+          <motion.div
+            className="absolute top-0 right-0 md:hidden pointer-events-auto"
+            animate={{
+              paddingTop: isScrolled ? "20px" : "0px",
+              paddingRight: "16px",
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            <motion.div
+              className="backdrop-blur-xl border border-white/30 p-2"
+              style={getBackgroundStyle()}
+              animate={{
+                borderRadius: isScrolled ? "50px" : "0px",
+                height: isScrolled ? "52px" : "44px",
+                width: isScrolled ? "52px" : "44px",
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
               <motion.button
                 onClick={toggleMenu}
-                className="text-gray-600 hover:text-gray-800 p-2 z-50 relative"
+                className="text-gray-600 hover:text-gray-800 w-full h-full flex items-center justify-center"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -364,10 +505,10 @@ const Navbar = () => {
                   )}
                 </motion.div>
               </motion.button>
-            </div>
+            </motion.div>
           </motion.div>
-        </div>
-      </motion.nav>
+        </motion.div>
+      </div>
 
       {/* Mobile Menu - Full Screen Overlay */}
       <AnimatePresence>

@@ -174,7 +174,6 @@ const MobileDevelopment = () => {
       { name: "VS Code", icon: Monitor },
       { name: "Git & GitHub", icon: Code },
     ],
-
     heroMessage:
       "Start your journey to a global career in Mobile App Development! Gain hands-on skills and become an industry-ready professional",
     certificationTitle: "Mobile App Developer",
