@@ -200,7 +200,7 @@ const CourseCardsGrid = () => {
       <HeroSection onStartJourney={handleStartJourney} />
       <div
         ref={coursesRef}
-        className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 relative bottom-32"
+        className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8 relative bottom-32"
       >
         <div className="max-w-7xl mx-auto">
           {/* Header */}

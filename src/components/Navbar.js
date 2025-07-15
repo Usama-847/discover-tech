@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -12,6 +12,51 @@ import {
   AnimatePresence,
 } from "framer-motion";
 
+const NAV_LINKS = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Solution", path: "/solution" },
+  { name: "Our Products", path: "/products" },
+];
+
+const BOOTCAMP_OPTIONS = [
+  { name: "All Bootcamps", path: "/bootcamp" },
+  { name: "Data Engineering", path: "/bootcamp/data-engineering" },
+  { name: "Digital Marketing", path: "/bootcamp/digital-marketing" },
+  { name: "Airline Reservation", path: "/bootcamp/airline-reservation" },
+  { name: "Data Analytics Bootcamp", path: "/bootcamp/data-analytics" },
+  { name: "Business Analytics", path: "/bootcamp/business-analytics" },
+  { name: "Mern Stack Bootcamp", path: "/bootcamp/mern-stack" },
+  { name: "Mobile Development Bootcamp", path: "/bootcamp/mobile-development" },
+  { name: "Business Development", path: "/bootcamp/business-development" },
+  {
+    name: "Web Design and Development",
+    path: "/bootcamp/web-design-development",
+  },
+  { name: "Cyber Security", path: "/bootcamp/cyber-security" },
+];
+
+const fadeInVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: index * 0.1 },
+  }),
+};
+
+const dropdownVariants = {
+  hidden: { opacity: 0, y: -10, scale: 0.95 },
+  visible: { opacity: 1, y: 0, scale: 1 },
+  exit: { opacity: 0, y: -10, scale: 0.95 },
+};
+
+const mobileMenuVariants = {
+  hidden: { x: "100%" },
+  visible: { x: 0 },
+  exit: { x: "100%" },
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBootcampOpen, setIsBootcampOpen] = useState(false);
@@ -20,83 +65,267 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const { scrollY } = useScroll();
-  // Logo rotates unlimited times with scroll - every 100px = full rotation
   const logoRotation = useTransform(scrollY, (value) => value * 0.36);
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Solution", path: "/solution" },
-    { name: "Our Products", path: "/products" },
-  ];
-
-  const bootcampOptions = [
-    { name: "All Bootcamps", path: "/bootcamp" },
-    { name: "Data Engineering", path: "/bootcamp/data-engineering" },
-    { name: "Digital Marketing", path: "/bootcamp/digital-marketing" },
-    { name: "Airline Reservation", path: "/bootcamp/airline-reservation" },
-    { name: "Data Analytics Bootcamp", path: "/bootcamp/data-analytics" },
-    { name: "Business Analytics", path: "/bootcamp/business-analytics" },
-    { name: "Mern Stack Bootcamp", path: "/bootcamp/mern-stack" },
-    {
-      name: "Mobile Development Bootcamp",
-      path: "/bootcamp/mobile-development",
+  // Memoized functions to prevent unnecessary re-renders
+  const isActive = useCallback(
+    (path) => {
+      if (path === "/") return pathname === "/";
+      return pathname.startsWith(path);
     },
-    { name: "Business Development", path: "/bootcamp/business-development" },
-    {
-      name: "Web Design and Development",
-      path: "/bootcamp/web-design-development",
-    },
-    { name: "Cyber Security", path: "/bootcamp/cyber-security" },
-  ];
+    [pathname]
+  );
 
+  const isBootcampActive = useCallback(() => {
+    return pathname.startsWith("/bootcamp");
+  }, [pathname]);
+
+  const getBackgroundStyle = useCallback(
+    () => ({
+      background: isScrolled
+        ? "rgba(255, 255, 255, 0.15)"
+        : "rgba(255, 255, 255, 0.9)",
+      backdropFilter: isScrolled ? "blur(20px)" : "blur(0px)",
+      WebkitBackdropFilter: isScrolled ? "blur(20px)" : "blur(0px)",
+    }),
+    [isScrolled]
+  );
+
+  // Optimized event handlers
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 10);
+  }, []);
+
+  const handleResize = useCallback(() => {
+    setIsLargeDevice(window.innerWidth >= 1024);
+  }, []);
+
+  const toggleMenu = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
+
+  const toggleBootcamp = useCallback(() => {
+    setIsBootcampOpen((prev) => !prev);
+  }, []);
+
+  const handleBootcampMouseEnter = useCallback(() => {
+    if (window.innerWidth >= 1024) {
+      setIsBootcampOpen(true);
+    }
+  }, []);
+
+  const handleBootcampMouseLeave = useCallback(() => {
+    if (window.innerWidth >= 1024) {
+      setIsBootcampOpen(false);
+    }
+  }, []);
+
+  const closeMenus = useCallback(() => {
+    setIsOpen(false);
+    setIsBootcampOpen(false);
+  }, []);
+
+  // Optimized useEffect with proper cleanup
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+    // Throttle scroll event for better performance
+    let ticking = false;
+    const handleScrollThrottled = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    const handleResize = () => {
-      setIsLargeDevice(window.innerWidth >= 1024);
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScrollThrottled, { passive: true });
     window.addEventListener("resize", handleResize);
 
     // Initial check
     handleResize();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScrollThrottled);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [handleScroll, handleResize]);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  // Memoized components to prevent unnecessary re-renders
+  const LogoComponent = useMemo(
+    () => (
+      <Link href="/" className="flex items-center">
+        <motion.div
+          className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg mr-3"
+          style={{ rotate: logoRotation }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <Image
+            src="/images/logo/logo.png"
+            width={50}
+            height={50}
+            alt="DiscoverTech Logo"
+            className="object-cover"
+            priority
+          />
+        </motion.div>
+        <span className="text-gray-800 text-xl font-semibold">
+          DiscoverTech
+        </span>
+      </Link>
+    ),
+    [logoRotation]
+  );
 
-  const toggleBootcamp = () => {
-    setIsBootcampOpen(!isBootcampOpen);
-  };
+  const ContactButton = useMemo(
+    () => (
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <Link
+          href="/contact"
+          className="bg-[#008236] hover:bg-[#255c3c] text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center shadow-lg hover:shadow-purple-500/25"
+        >
+          Contact Us
+          <motion.svg
+            className="ml-2 h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            whileHover={{ x: 2 }}
+            transition={{ duration: 0.2 }}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </motion.svg>
+        </Link>
+      </motion.div>
+    ),
+    []
+  );
 
-  const isActive = (path) => {
-    if (path === "/") {
-      return pathname === "/";
-    }
-    return pathname.startsWith(path);
-  };
+  const NavLinks = useMemo(
+    () => (
+      <>
+        {NAV_LINKS.map((link, index) => (
+          <motion.div
+            key={link.name}
+            custom={index}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInVariants}
+          >
+            <Link
+              href={link.path}
+              className={`text-sm transition-all duration-300 relative group ${
+                isActive(link.path)
+                  ? "font-bold"
+                  : "font-medium text-gray-600 hover:text-gray-800"
+              }`}
+              style={{
+                color: isActive(link.path) ? "#8000D7" : undefined,
+              }}
+            >
+              {link.name}
+              <motion.div
+                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 0 }}
+                whileHover={{ scaleX: !isActive(link.path) ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
+              />
+            </Link>
+          </motion.div>
+        ))}
+      </>
+    ),
+    [isActive]
+  );
 
-  const isBootcampActive = () => {
-    return pathname.startsWith("/bootcamp");
-  };
+  const BootcampDropdown = useMemo(
+    () => (
+      <motion.div
+        className="relative"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInVariants}
+        custom={3}
+        onMouseEnter={handleBootcampMouseEnter}
+        onMouseLeave={handleBootcampMouseLeave}
+      >
+        <button
+          onClick={toggleBootcamp}
+          className={`text-sm transition-all duration-300 relative group flex items-center ${
+            isBootcampActive()
+              ? "font-bold"
+              : "font-medium text-gray-600 hover:text-gray-800"
+          }`}
+          style={{
+            color: isBootcampActive() ? "#8000D7" : undefined,
+          }}
+        >
+          Bootcamp
+          <motion.div
+            animate={{ rotate: isBootcampOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ChevronDown className="ml-1 h-4 w-4" />
+          </motion.div>
+          <motion.div
+            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 0 }}
+            whileHover={{ scaleX: !isBootcampActive() ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+          />
+        </button>
 
-  const getBackgroundStyle = () => ({
-    background: isScrolled
-      ? "rgba(255, 255, 255, 0.15)"
-      : "rgba(255, 255, 255, 0.9)",
-    backdropFilter: isScrolled ? "blur(20px)" : "blur(0px)",
-    WebkitBackdropFilter: isScrolled ? "blur(20px)" : "blur(0px)",
-  });
+        <AnimatePresence>
+          {isBootcampOpen && (
+            <motion.div
+              variants={dropdownVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              transition={{ duration: 0.2 }}
+              className="absolute left-0 mt-2 w-64 bg-gray-300 backdrop-blur-md rounded-xl shadow-2xl py-2 z-50 border border-gray-200"
+            >
+              {BOOTCAMP_OPTIONS.map((option, index) => (
+                <motion.div
+                  key={option.name}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Link
+                    href={option.path}
+                    className={`block px-4 py-2 text-sm transition-all duration-200 rounded-lg mx-2 ${
+                      isActive(option.path)
+                        ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-800"
+                    }`}
+                    onClick={() => setIsBootcampOpen(false)}
+                  >
+                    {option.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    ),
+    [
+      isBootcampOpen,
+      isBootcampActive,
+      isActive,
+      handleBootcampMouseEnter,
+      handleBootcampMouseLeave,
+      toggleBootcamp,
+    ]
+  );
 
   return (
     <>
@@ -104,20 +333,15 @@ const Navbar = () => {
       <div className="fixed top-0 left-0 right-0 z-[999] pointer-events-none">
         <motion.div
           className="relative w-full"
-          animate={{
-            paddingTop: isScrolled ? "25px" : "0px",
-          }}
-          transition={{
-            duration: 0.4,
-            ease: "easeInOut",
-          }}
+          animate={{ paddingTop: isScrolled ? "25px" : "0px" }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           {/* Logo Section - Non-scrolled state */}
           {!isScrolled && (
             <motion.div
               className="absolute top-3 left-0 pointer-events-auto"
               initial={{ opacity: 1 }}
-              animate={{ opacity: !isScrolled ? 1 : 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
             >
               <motion.div
@@ -131,24 +355,7 @@ const Navbar = () => {
                 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
               >
-                <Link href="/" className="flex items-center">
-                  <motion.div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg mr-3"
-                    style={{ rotate: logoRotation }}
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <Image
-                      src="/images/logo/logo.png"
-                      width={50}
-                      height={50}
-                      alt="logo"
-                      className="object-cover"
-                    />
-                  </motion.div>
-                  <span className="text-gray-800 text-xl font-semibold">
-                    DiscoverTech
-                  </span>
-                </Link>
+                {LogoComponent}
               </motion.div>
             </motion.div>
           )}
@@ -156,9 +363,9 @@ const Navbar = () => {
           {/* Desktop Menu Section - Non-scrolled state */}
           {!isScrolled && (
             <motion.div
-              className="absolute top-3 right-0 hidden md:block pointer-events-auto"
+              className="absolute top-3 right-0 hidden lg:block pointer-events-auto"
               initial={{ opacity: 1 }}
-              animate={{ opacity: !isScrolled ? 1 : 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
             >
               <motion.div
@@ -172,132 +379,10 @@ const Navbar = () => {
                 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
               >
-                <div className="flex items-center space-x-8">
-                  {navLinks.map((link, index) => (
-                    <motion.div
-                      key={link.name}
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <Link
-                        href={link.path}
-                        className={`text-sm transition-all duration-300 relative group ${
-                          isActive(link.path)
-                            ? "font-bold"
-                            : "font-medium text-gray-600 hover:text-gray-800"
-                        }`}
-                        style={{
-                          color: isActive(link.path) ? "#8000D7" : undefined,
-                        }}
-                      >
-                        {link.name}
-                        <motion.div
-                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
-                          initial={{ scaleX: 0 }}
-                          animate={{ scaleX: 0 }}
-                          whileHover={{ scaleX: !isActive(link.path) ? 1 : 0 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      </Link>
-                    </motion.div>
-                  ))}
-
-                  {/* Bootcamp Dropdown */}
-                  <motion.div
-                    className="relative"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <button
-                      onClick={toggleBootcamp}
-                      className={`text-sm transition-all duration-300 relative group flex items-center ${
-                        isBootcampActive()
-                          ? "font-bold"
-                          : "font-medium text-gray-600 hover:text-gray-800"
-                      }`}
-                      style={{
-                        color: isBootcampActive() ? "#8000D7" : undefined,
-                      }}
-                    >
-                      Bootcamp
-                      <motion.div
-                        animate={{ rotate: isBootcampOpen ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ChevronDown className="ml-1 h-4 w-4" />
-                      </motion.div>
-                      <motion.div
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 0 }}
-                        whileHover={{ scaleX: !isBootcampActive() ? 1 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    </button>
-
-                    <AnimatePresence>
-                      {isBootcampOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute left-0 mt-2 w-64 bg-gray-300 backdrop-blur-md rounded-xl shadow-2xl py-2 z-50 border border-gray-200"
-                        >
-                          {bootcampOptions.map((option, index) => (
-                            <motion.div
-                              key={option.name}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: index * 0.05 }}
-                            >
-                              <Link
-                                href={option.path}
-                                className={`block px-4 py-2 text-sm transition-all duration-200 rounded-lg mx-2 ${
-                                  isActive(option.path)
-                                    ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white"
-                                    : "text-gray-700 hover:bg-gray-100 hover:text-gray-800"
-                                }`}
-                                onClick={() => setIsBootcampOpen(false)}
-                              >
-                                {option.name}
-                              </Link>
-                            </motion.div>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-
-                  {/* Contact Us Button */}
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Link
-                      href="/contact"
-                      className="bg-[#008236] hover:bg-[#255c3c] text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center shadow-lg hover:shadow-purple-500/25"
-                    >
-                      Contact Us
-                      <motion.svg
-                        className="ml-2 h-4 w-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        whileHover={{ x: 2 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </motion.svg>
-                    </Link>
-                  </motion.div>
+                <div className="flex items-center space-x-6">
+                  {NavLinks}
+                  {BootcampDropdown}
+                  {ContactButton}
                 </div>
               </motion.div>
             </motion.div>
@@ -306,22 +391,26 @@ const Navbar = () => {
           {/* Scrolled State - Combined Logo and Menu */}
           {isScrolled && isLargeDevice && (
             <motion.div
-              className="absolute top-3 left-1/2 transform -translate-x-1/2 hidden md:block pointer-events-auto"
+              className="absolute top-3 left-1/2 transform -translate-x-1/2 hidden lg:block pointer-events-auto"
               initial={{ opacity: 0 }}
-              animate={{ opacity: isScrolled ? 1 : 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
             >
               <motion.div
-                className="backdrop-blur-xl border border-white/30 px-4 py-3 flex items-center justify-center"
+                className="backdrop-blur-xl border border-white/30 flex items-center justify-center"
                 style={getBackgroundStyle()}
                 animate={{
                   borderRadius: "50px",
                   height: "72px",
+                  width: "900px",
+                  paddingLeft: "8px",
+                  paddingRight: "8px",
+                  paddingTop: "12px",
+                  paddingBottom: "12px",
                 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
               >
-                <div className="flex items-center space-x-8">
-                  {/* Logo in scrolled state */}
+                <div className="flex items-center space-x-12">
                   <Link href="/" className="flex items-center mr-4">
                     <motion.div
                       className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg"
@@ -332,138 +421,15 @@ const Navbar = () => {
                         src="/images/logo/logo.png"
                         width={50}
                         height={50}
-                        alt="logo"
+                        alt="DiscoverTech Logo"
                         className="object-cover"
+                        priority
                       />
                     </motion.div>
                   </Link>
-
-                  {/* Menu items */}
-                  {navLinks.map((link, index) => (
-                    <motion.div
-                      key={link.name}
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <Link
-                        href={link.path}
-                        className={`text-sm transition-all duration-300 relative group ${
-                          isActive(link.path)
-                            ? "font-bold"
-                            : "font-medium text-gray-600 hover:text-gray-800"
-                        }`}
-                        style={{
-                          color: isActive(link.path) ? "#8000D7" : undefined,
-                        }}
-                      >
-                        {link.name}
-                        <motion.div
-                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
-                          initial={{ scaleX: 0 }}
-                          animate={{ scaleX: 0 }}
-                          whileHover={{ scaleX: !isActive(link.path) ? 1 : 0 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      </Link>
-                    </motion.div>
-                  ))}
-
-                  {/* Bootcamp Dropdown */}
-                  <motion.div
-                    className="relative"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <button
-                      onClick={toggleBootcamp}
-                      className={`text-sm transition-all duration-300 relative group flex items-center ${
-                        isBootcampActive()
-                          ? "font-bold"
-                          : "font-medium text-gray-600 hover:text-gray-800"
-                      }`}
-                      style={{
-                        color: isBootcampActive() ? "#8000D7" : undefined,
-                      }}
-                    >
-                      Bootcamp
-                      <motion.div
-                        animate={{ rotate: isBootcampOpen ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ChevronDown className="ml-1 h-4 w-4" />
-                      </motion.div>
-                      <motion.div
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 0 }}
-                        whileHover={{ scaleX: !isBootcampActive() ? 1 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    </button>
-
-                    <AnimatePresence>
-                      {isBootcampOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute left-0 mt-2 w-64 bg-gray-300 backdrop-blur-md rounded-xl shadow-2xl py-2 z-50 border border-gray-200"
-                        >
-                          {bootcampOptions.map((option, index) => (
-                            <motion.div
-                              key={option.name}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: index * 0.05 }}
-                            >
-                              <Link
-                                href={option.path}
-                                className={`block px-4 py-2 text-sm transition-all duration-200 rounded-lg mx-2 ${
-                                  isActive(option.path)
-                                    ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white"
-                                    : "text-gray-700 hover:bg-gray-100 hover:text-gray-800"
-                                }`}
-                                onClick={() => setIsBootcampOpen(false)}
-                              >
-                                {option.name}
-                              </Link>
-                            </motion.div>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-
-                  {/* Contact Us Button */}
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Link
-                      href="/contact"
-                      className="bg-[#008236] hover:bg-[#255c3c] text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center shadow-lg hover:shadow-purple-500/25"
-                    >
-                      Contact Us
-                      <motion.svg
-                        className="ml-2 h-4 w-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        whileHover={{ x: 2 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </motion.svg>
-                    </Link>
-                  </motion.div>
+                  {NavLinks}
+                  {BootcampDropdown}
+                  {ContactButton}
                 </div>
               </motion.div>
             </motion.div>
@@ -471,7 +437,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.div
-            className="absolute top-0 right-0 md:hidden pointer-events-auto"
+            className="absolute top-0 right-0 lg:hidden pointer-events-auto"
             animate={{
               paddingTop: isScrolled ? "20px" : "0px",
               paddingRight: "16px",
@@ -493,6 +459,7 @@ const Navbar = () => {
                 className="text-gray-600 hover:text-gray-800 w-full h-full flex items-center justify-center"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                aria-label="Toggle menu"
               >
                 <motion.div
                   animate={{ rotate: isOpen ? 180 : 0 }}
@@ -514,11 +481,12 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
+            variants={mobileMenuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed inset-0 bg-black/95 backdrop-blur-md z-40 md:hidden"
+            className="fixed inset-0 bg-black/95 backdrop-blur-md z-40 lg:hidden"
           >
             {/* Mobile Header with Logo */}
             <div className="flex justify-between items-center h-16 px-4 border-b border-white/10">
@@ -538,15 +506,16 @@ const Navbar = () => {
                 className="text-gray-300 hover:text-white p-2"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                aria-label="Close menu"
               >
                 <X className="h-6 w-6" />
               </motion.button>
             </div>
 
-            {/* Mobile Menu Content - Centered */}
+            {/* Mobile Menu Content */}
             <div className="flex flex-col justify-center items-center h-full px-6 -mt-16">
               <div className="space-y-6 text-center">
-                {navLinks.map((link, index) => (
+                {NAV_LINKS.map((link, index) => (
                   <motion.div
                     key={link.name}
                     initial={{ opacity: 0, y: 20 }}
@@ -560,7 +529,7 @@ const Navbar = () => {
                           ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white"
                           : "text-gray-300 hover:text-white hover:bg-white/10"
                       }`}
-                      onClick={() => setIsOpen(false)}
+                      onClick={closeMenus}
                     >
                       {link.name}
                     </Link>
@@ -601,7 +570,7 @@ const Navbar = () => {
                         className="overflow-hidden"
                       >
                         <div className="pt-3 space-y-3 max-h-72 overflow-y-auto scrollbar-hide">
-                          {bootcampOptions.map((option, index) => (
+                          {BOOTCAMP_OPTIONS.map((option, index) => (
                             <motion.div
                               key={option.name}
                               initial={{ opacity: 0, x: -20 }}
@@ -615,10 +584,7 @@ const Navbar = () => {
                                     ? "bg-gradient-to-r from-purple-600 to-purple-700 text-white"
                                     : "text-gray-400 hover:text-white hover:bg-white/10"
                                 }`}
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setIsBootcampOpen(false);
-                                }}
+                                onClick={closeMenus}
                               >
                                 {option.name}
                               </Link>
@@ -639,7 +605,7 @@ const Navbar = () => {
                   <Link
                     href="/contact"
                     className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-200 flex items-center justify-center mt-8 shadow-lg"
-                    onClick={() => setIsOpen(false)}
+                    onClick={closeMenus}
                   >
                     Contact Us
                     <motion.svg

@@ -271,7 +271,7 @@ export default function Contact() {
               </h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://web.facebook.com/discovertech0/"
+                  href="https://web.facebook.com/discovertech01/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-blue-600 transition-colors"
