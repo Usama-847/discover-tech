@@ -23,14 +23,14 @@
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+92-XXX-XXXXXXX",
+        "telephone": "+92 310 2299985",
         "contactType": "customer service",
         "availableLanguage": ["English", "Urdu"]
       },
       "sameAs": [
-        "https://twitter.com/DiscoverTech",
-        "https://www.facebook.com/DiscoverTech",
-        "https://www.linkedin.com/company/discovertech"
+        "https://www.tiktok.com/@discovertech0",
+        "https://web.facebook.com/discovertech01/",
+        "https://www.linkedin.com/in/discoverthetech0/"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
