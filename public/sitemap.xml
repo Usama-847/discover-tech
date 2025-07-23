@@ -1,33 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://www.discovertech.com.pk/</loc>
-    <lastmod>2025-07-15</lastmod>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.discovertech.com.pk/about</loc>
-    <lastmod>2025-07-15</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.discovertech.com.pk/contact</loc>
-    <lastmod>2025-07-15</lastmod>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.discovertech.com.pk/solution</loc>
-    <lastmod>2025-07-15</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.discovertech.com.pk/bootcamp</loc>
-    <lastmod>2025-07-15</lastmod>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.discovertech.com.pk/products</loc>
-    <lastmod>2025-07-15</lastmod>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/contact</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Bootcamp Main Page -->
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Bootcamp Subcategories -->
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/data-engineering</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/digital-marketing</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/airline-reservation</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/data-analytics</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/business-analytics</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/mern-stack</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/mobile-development</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/business-development</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/web-design-development</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.discovertech.com.pk/bootcamp/cyber-security</loc>
+    <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

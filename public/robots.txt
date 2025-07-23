@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.discovertech.com.pk/
+
+# Sitemaps
+Sitemap: https://www.discovertech.com.pk/sitemap.xml
