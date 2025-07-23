@@ -1,0 +1,354 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.discovertech.com.pk/#organization",
+      "name": "Discover Tech",
+      "alternateName": "DiscoverTech",
+      "url": "https://www.discovertech.com.pk/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.discovertech.com.pk/images/logo/logo.png",
+        "width": 50,
+        "height": 50
+      },
+      "description": "Discover Tech is a leading technology solutions company specializing in web development, mobile app development, and AI/ML/LLM-powered innovations.",
+      "foundingDate": "2020",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rawalpindi",
+        "addressRegion": "Punjab",
+        "addressCountry": "PK"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+92-XXX-XXXXXXX",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Urdu"]
+      },
+      "sameAs": [
+        "https://twitter.com/DiscoverTech",
+        "https://www.facebook.com/DiscoverTech",
+        "https://www.linkedin.com/company/discovertech"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "DiscoverTech Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Development",
+              "description": "Professional web development services using modern technologies"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Development",
+              "description": "Native and cross-platform mobile application development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI/ML Solutions",
+              "description": "Artificial Intelligence and Machine Learning powered solutions"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.discovertech.com.pk/#website",
+      "url": "https://www.discovertech.com.pk/",
+      "name": "Discover Tech",
+      "description": "Discover Tech builds modern digital products using web, mobile, AI, and LLM technologies.",
+      "publisher": {
+        "@id": "https://www.discovertech.com.pk/#organization"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.discovertech.com.pk/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.discovertech.com.pk/#webpage",
+      "url": "https://www.discovertech.com.pk/",
+      "name": "Discover Tech - Leading Technology Solutions Company",
+      "isPartOf": {
+        "@id": "https://www.discovertech.com.pk/#website"
+      },
+      "about": {
+        "@id": "https://www.discovertech.com.pk/#organization"
+      },
+      "description": "Discover Tech is a leading technology solutions company specializing in web development, mobile app development, and AI/ML/LLM-powered innovations.",
+      "breadcrumb": {
+        "@id": "https://www.discovertech.com.pk/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.discovertech.com.pk/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.discovertech.com.pk/"
+        }
+      ]
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.discovertech.com.pk/#educationalorganization",
+      "name": "Discover Tech Bootcamps",
+      "url": "https://www.discovertech.com.pk/bootcamp",
+      "description": "Professional training bootcamps in technology and digital skills",
+      "parentOrganization": {
+        "@id": "https://www.discovertech.com.pk/#organization"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Bootcamp Programs",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/data-engineering",
+              "name": "Data Engineering Bootcamp",
+              "description": "Comprehensive training in data engineering technologies and practices",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/digital-marketing",
+              "name": "Digital Marketing Bootcamp",
+              "description": "Master digital marketing strategies and tools",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/airline-reservation",
+              "name": "Airline Reservation System Bootcamp",
+              "description": "Learn airline reservation system development and management",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/data-analytics",
+              "name": "Data Analytics Bootcamp",
+              "description": "Comprehensive data analytics training program",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/business-analytics",
+              "name": "Business Analytics Bootcamp",
+              "description": "Learn business analytics and data-driven decision making",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/mern-stack",
+              "name": "MERN Stack Bootcamp",
+              "description": "Full-stack web development with MongoDB, Express, React, and Node.js",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/mobile-development",
+              "name": "Mobile Development Bootcamp",
+              "description": "Native and cross-platform mobile app development training",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/business-development",
+              "name": "Business Development Bootcamp",
+              "description": "Strategic business development and growth training",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/web-design-development",
+              "name": "Web Design and Development Bootcamp",
+              "description": "Complete web design and development training program",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "@id": "https://www.discovertech.com.pk/bootcamp/cyber-security",
+              "name": "Cyber Security Bootcamp",
+              "description": "Comprehensive cybersecurity training and certification program",
+              "provider": {
+                "@id": "https://www.discovertech.com.pk/#educationalorganization"
+              },
+              "courseMode": "blended",
+              "inLanguage": "en"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "DiscoverTech Products",
+      "url": "https://www.discovertech.com.pk/products",
+      "description": "Innovative software products and solutions developed by DiscoverTech",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "provider": {
+        "@id": "https://www.discovertech.com.pk/#organization"
+      }
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://www.discovertech.com.pk/contact",
+      "url": "https://www.discovertech.com.pk/contact",
+      "name": "Contact Us - Discover Tech",
+      "description": "Get in touch with DiscoverTech for your technology solution needs",
+      "isPartOf": {
+        "@id": "https://www.discovertech.com.pk/#website"
+      },
+      "about": {
+        "@id": "https://www.discovertech.com.pk/#organization"
+      }
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://www.discovertech.com.pk/about",
+      "url": "https://www.discovertech.com.pk/about",
+      "name": "About Us - Discover Tech",
+      "description": "Learn more about DiscoverTech's mission, vision, and expertise in technology solutions",
+      "isPartOf": {
+        "@id": "https://www.discovertech.com.pk/#website"
+      },
+      "about": {
+        "@id": "https://www.discovertech.com.pk/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.discovertech.com.pk/solution",
+      "name": "Technology Solutions",
+      "url": "https://www.discovertech.com.pk/solution",
+      "description": "Comprehensive technology solutions including web development, mobile apps, and AI/ML services",
+      "provider": {
+        "@id": "https://www.discovertech.com.pk/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Pakistan"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Technology Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Development Services",
+              "description": "Custom web development using modern frameworks and technologies"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Development Services",
+              "description": "Native and hybrid mobile application development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI/ML/LLM Solutions",
+              "description": "Artificial Intelligence, Machine Learning, and Large Language Model integration services"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

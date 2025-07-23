@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { organizationSchema, websiteSchema } from "@/utils/schema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -96,6 +97,21 @@ export default function RootLayout({ children }) {
               fbq('init', '1443031700216063');
               fbq('track', 'PageView');
             `,
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+
+        {/* Website Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
           }}
         />
       </head>
