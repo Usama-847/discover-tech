@@ -10,7 +10,7 @@ const BusinessDevelopment = () => {
       "Business Development focuses on identifying growth opportunities, building strategic partnerships, and expanding market presence. It involves market research, lead generation, relationship management, and sales strategies to drive long-term revenue and business success.",
     duration: "03 Months",
     schedule: "Thursday,Friday",
-    startDate: "16 June, 2025",
+    startDate: "16 August, 2025",
     format: "Online & Interactive",
     instructor: {
       name: "Amir Jabbar",

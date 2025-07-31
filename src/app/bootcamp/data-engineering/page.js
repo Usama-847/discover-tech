@@ -10,7 +10,7 @@ const DataEngineering = () => {
       "Data Engineering is the process of designing, building and maintaining data infrastructure and pipelines to collect, store and process large volumes of data efficiently. It supports data analysis, machine learning, and business intelligence by ensuring data is clean, accessible, and reliable. With the growth of big data, IoT, and AI, data engineering has become a critical role in modern organizations. The demand for skilled data engineers is rapidly increasing across industries. In the future, automation, real-time processing, and cloud-native technologies will likely define this field's evolution.",
     duration: "03 Months",
     schedule: "Wednesday, Thursday",
-    startDate: "16 June, 2025",
+    startDate: "16 August, 2025",
     format: "Online & Interactive",
     instructor: {
       name: "AMIR JABBAR",

@@ -470,7 +470,7 @@ const BootcampComponent = ({
               </p>
             </motion.div>
             <motion.div
-              className="grid md:grid-cols-2 gap-12 items-start"
+              className="grid md:grid-cols-2 gap-12 items-stretch"
               variants={staggerContainer}
               initial="initial"
               whileInView="animate"
@@ -478,28 +478,30 @@ const BootcampComponent = ({
             >
               {instructor.bio && (
                 <motion.div
-                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-full flex flex-col"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <h4 className="text-xl font-semibold text-gray-800 mb-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <div className="w-2 h-8 bg-gradient-to-b from-black to-gray-700 rounded-full mr-3"></div>
                     Professional Background
                   </h4>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed flex-1">
                     {instructor.bio}
                   </p>
                 </motion.div>
               )}
               {instructor.experience && (
                 <motion.div
-                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-full flex flex-col"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <h4 className="text-xl font-semibold text-gray-800 mb-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <div className="w-2 h-8 bg-gradient-to-b from-black to-gray-700 rounded-full mr-3"></div>
                     Teaching Excellence
                   </h4>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed flex-1">
                     {instructor.experience}
                   </p>
                 </motion.div>

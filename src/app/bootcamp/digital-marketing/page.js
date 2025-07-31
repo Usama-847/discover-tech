@@ -10,7 +10,7 @@ const DigitalMarketing = () => {
       "Digital Marketing involves promoting products or services through online channels such as social media, search engines, email, and websites. It focuses on increasing brand awareness, engaging target audiences, and driving conversions using data-driven strategies and digital tools.",
     duration: "03 Months",
     schedule: "Monday, Tuesday, Wednesday",
-    startDate: "16 June, 2025",
+    startDate: "16 August, 2025",
     format: "Online & Interactive",
     instructor: {
       name: "Faraz Khan",

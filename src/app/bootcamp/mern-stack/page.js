@@ -10,7 +10,7 @@ const MERNstack = () => {
       "MERN Stack Development is a full-stack JavaScript framework using MongoDB, Express.js, React.js, and Node.js to build dynamic web applications. It enables developers to create powerful, scalable, and responsive apps using a single programming language across the entire tech stack—JavaScript.",
     duration: "03 Months",
     schedule: "Tuesday, Thursday, Saturday",
-    startDate: "16 June, 2025",
+    startDate: "16 August, 2025",
     format: "Online & Interactive",
     instructor: {
       name: "Muhammad Ubaud Ur Rehman",

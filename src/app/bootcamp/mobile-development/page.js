@@ -10,7 +10,7 @@ const MobileDevelopment = () => {
       "A React Native Mobile App Developer specializes in building cross-platform mobile applications for iOS and Android using JavaScript and the React Native framework. They create high-performance, user-friendly apps with native-like experiences, handling everything from UI design to backend integration.",
     duration: "03 Months",
     schedule: "Monday, Wednesday, Friday",
-    startDate: "16 June, 2025",
+    startDate: "16 August, 2025",
     format: "Online & Interactive",
     instructor: {
       name: "Khurram Shahid",

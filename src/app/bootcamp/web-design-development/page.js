@@ -10,7 +10,7 @@ const WebDesignDevelopment = () => {
       "Learn to build modern, responsive, and user-friendly websites from scratch. This course covers the complete web design and development lifecycle—from HTML, CSS, and JavaScript to advanced frameworks like React and backend technologies like Node.js. You’ll master both the design aesthetics and the technical skills required to create functional, visually appealing websites and web applications. Ideal for beginners and aspiring full-stack developers.",
     duration: "03 Months",
     schedule: "Tuesday, Thursday, Saturday",
-    startDate: "16 June, 2025",
+    startDate: "16 August, 2025",
     format: "Online & Interactive",
     instructor: {
       name: "Muhammad Ubaud Ur Rehman",

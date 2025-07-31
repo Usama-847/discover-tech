@@ -10,7 +10,7 @@ const Cybersecurity = () => {
       "Cyber Security is the practice of protecting systems, networks, and data from digital attacks, unauthorized access, and cyber threats. This field focuses on implementing defensive measures, monitoring systems for vulnerabilities, and responding to incidents in real time. As cyber threats grow more complex, skilled professionals are in high demand to safeguard sensitive information and maintain digital trust across industries.",
     duration: "03 Months",
     schedule: "Monday, Wednesday, Friday",
-    startDate: "16 June, 2025",
+    startDate: "16 August, 2025",
     format: "Online & Interactive",
     instructor: {
       name: "Khurram Shahid",

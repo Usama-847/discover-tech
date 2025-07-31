@@ -10,7 +10,7 @@ const AirlineReservation = () => {
       "An Airline Reservation System is a web-based or desktop application that automates the process of booking airline tickets. It allows customers to search flights, check availability, reserve seats, make payments, and receive e-tickets in real-time. The system streamlines operations for airlines by managing schedules, fares, passenger data, and cancellations, ensuring efficient and user-friendly air travel experiences.",
     duration: "02 Months",
     schedule: "Monday, Friday",
-    startDate: "16 June, 2025",
+    startDate: "16 August, 2025",
     format: "Online & Interactive",
     instructor: {
       name: "MS Khan Yousafzai",
